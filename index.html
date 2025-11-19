@@ -3,245 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ari Rabinovitz | Mechanical & Aerospace Engineering</title>
+    <title>Ari Rabinovitz | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <style>
-        /* --- RESET & BASICS --- */
+        /* --- VARIABLES & THEME --- */
+        :root {
+            --primary: #0f172a;      /* Dark Navy */
+            --accent: #2563eb;       /* Bright Blue */
+            --bg: #f8fafc;           /* Very Light Grey-Blue */
+            --card-bg: #ffffff;      /* Pure White */
+            --text-main: #334155;    /* Slate Grey */
+            --text-light: #64748b;   /* Lighter Grey */
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: #ffffff;
+        html {
             scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
         }
 
         a {
             text-decoration: none;
             color: inherit;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: #0056b3;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-bottom: 1rem;
+            transition: all 0.3s ease;
         }
 
         img {
             max-width: 100%;
-            height: auto;
             display: block;
-            margin: 20px 0;
-            border-radius: 4px;
-            background-color: #eee;
+            border-radius: 8px;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- ANIMATION CLASSES (JS triggers these) --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- NAVIGATION (Glassmorphism) --- */
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid #eaeaea;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             z-index: 1000;
-            padding: 0 20px;
+            padding: 15px 0;
+            transition: padding 0.3s;
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
-            gap: 25px;
             list-style: none;
-            margin: 0;
+            gap: 30px;
         }
 
         nav a {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #555;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
         }
 
         nav a:hover {
-            color: #000;
+            color: var(--accent);
         }
 
-        /* --- SECTIONS COMMON --- */
-        section {
-            padding: 80px 20px;
-            max-width: 900px;
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
             margin: 0 auto;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 0 20px;
         }
 
-        section:last-of-type {
-            border-bottom: none;
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .hero-image {
+            flex: 0.8;
+            position: relative;
+        }
+
+        .hero-image img {
+            box-shadow: var(--shadow);
+            border: 4px solid white;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
             margin-bottom: 20px;
-            color: #111;
+            letter-spacing: -1px;
         }
 
-        h2 {
-            font-size: 1.8rem;
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero-bio {
+            font-size: 1.1rem;
+            color: var(--text-light);
             margin-bottom: 30px;
-            color: #222;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.4);
+            background-color: #1e293b;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 60px;
             position: relative;
             display: inline-block;
         }
 
-        h2::after {
+        .section-title::after {
             content: '';
             display: block;
-            width: 40px;
-            height: 3px;
-            background: #333;
+            width: 60px;
+            height: 6px;
+            background: var(--accent);
             margin-top: 10px;
+            border-radius: 3px;
         }
 
-        h3 {
-            font-size: 1.3rem;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        /* --- HOME / BIO --- */
-        .bio-container {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-        }
-
-        .bio-text {
-            flex: 2;
-        }
-
-        .bio-image {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .bio-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        /* --- PROJECTS LIST --- */
-        .project-item {
-            margin-bottom: 80px;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #000;
-        }
-
-        .gallery {
+        /* --- PROJECTS GRID --- */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
-        .gallery figure {
-            margin: 0;
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .gallery figcaption {
-            font-size: 0.85rem;
-            color: #777;
-            margin-top: 8px;
-            text-align: center;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
         }
 
-        /* --- RESUME --- */
-        .resume-block {
-            background: #fafafa;
+        .card-image {
+            height: 250px;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
             padding: 30px;
-            border-radius: 8px;
         }
-        
-        .course-list {
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-top: 15px;
         }
-        
-        .course-tag {
-            background: #fff;
-            border: 1px solid #ddd;
+
+        .tag {
+            background: #eff6ff;
+            color: var(--accent);
             padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- RESUME SECTION --- */
+        .resume-container {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .resume-text {
+            flex: 2;
+        }
+
+        .resume-button {
+            flex: 1;
+            text-align: center;
         }
 
         /* --- FOOTER --- */
         footer {
-            background: #222;
-            color: #fff;
+            background: var(--primary);
+            color: white;
             text-align: center;
-            padding: 50px 20px;
-            margin-top: 50px;
-        }
-        
-        footer a {
-            color: #fff;
-            text-decoration: underline;
+            padding: 60px 20px;
+            margin-top: 100px;
         }
 
-        /* --- MOBILE --- */
-        @media (max-width: 768px) {
-            .bio-container {
+        footer a {
+            color: #94a3b8;
+            border-bottom: 1px dotted #94a3b8;
+        }
+
+        footer a:hover {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .hero-content {
                 flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text, .hero-image {
+                flex: auto;
+                width: 100%;
+            }
+
+            h1 { font-size: 2.5rem; }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resume-container {
+                flex-direction: column;
+                text-align: center;
             }
             
             nav ul {
                 gap: 15px;
-                font-size: 0.8rem;
-            }
-            
-            header {
-                padding: 0 15px;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 0;
-                gap: 10px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -256,167 +384,143 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
-                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home">
-        <div class="bio-container">
-            <div class="bio-text">
-                <small style="text-transform: uppercase; letter-spacing: 2px; color: #888;">Portfolio</small>
-                <h1>Hi! I'm Ari Rabinovitz</h1>
-                <p>
-                    I am a senior at <strong>Cornell University</strong> studying Mechanical and Aerospace Engineering. 
+    <div id="home" class="hero fade-in-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="subtitle">Mechanical & Aerospace Engineer</span>
+                <h1>Building Systems for Earth & Mars</h1>
+                <p class="hero-bio">
+                    Hi, I'm Ari. I'm a senior at <strong>Cornell University</strong> and the Arm Lead for the Cornell Mars Rover team. 
+                    I specialize in deployable structures, robotic manipulation, and space systems architecture.
                 </p>
-                <p>
-                    Currently, I am the lead of the arm sub-team of the <strong>Cornell Mars Rover</strong> project team, working to build a rover to compete in the University Rover Competition (URC).
-                </p>
-                <p>
-                    This past summer, I was employed as a Deployable Technologies Intern at <strong>Physical Sciences Inc.</strong>, designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge.
-                </p>
-                <p>
-                    I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.
-                </p>
-                <p>
-                    This school year, I am excited to take classes related to space, including Intermediate Dynamics and Spacecraft Technology and Systems Architecture.
-                </p>
+                <br>
+                <a href="#projects" class="btn">View My Work</a>
             </div>
-            <div class="bio-image">
-                <img src="https://via.placeholder.com/400x500?text=Ari+Rabinovitz" alt="Ari Rabinovitz">
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x600?text=Ari+Rabinovitz" alt="Ari Rabinovitz Profile">
             </div>
         </div>
-    </section>
+    </div>
 
     <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project-item">
-            <div class="project-title">Robotic Manipulator Structure</div>
-            <p>
-                As the lead of the arm sub-team for the Cornell Mars Rover project, I oversee the design and manufacturing of the robotic manipulator. The system is designed to be robust enough to lift heavy loads up to 5kg while maintaining the precision required for dexterous tasks like typing or flipping switches.
-            </p>
-            <p><em>(Full details coming soon)</em></p>
-            <div class="gallery">
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=Manipulator+Design" alt="Robotic Arm">
-                    <figcaption>Robotic Arm Design</figcaption>
-                </figure>
+        <h2 class="section-title fade-in-section">Selected Projects</h2>
+        
+        <div class="projects-grid">
+            
+            <div class="project-card fade-in-section">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/600x400?text=Robotic+Manipulator" alt="Robotic Arm">
+                </div>
+                <div class="card-content">
+                    <h3>Robotic Manipulator</h3>
+                    <p>Lead engineer for the Cornell Mars Rover arm sub-team. Designed a 5kg-load robotic system capable of dexterous tasks like typing and switch flipping.</p>
+                    <div class="tags">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">Manufacturing</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="project-item">
-            <div class="project-title">End Effector</div>
-            <p>
-                As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm. This arm is used to pick up rocks of complicated geometry, carry up to 5 kg, and complete several dexterous tasks such as typing on a keyboard, screwing in a screw, moving around a joystick, and flipping switches.
-            </p>
-            <h3>First Prototype</h3>
-            <p>
-                The first prototype of the end effector utilized a four-linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver. Unfortunately, the prototype had too much total weight and the 3D prints could not sustain carrying the maximum load of 5kg.
-            </p>
-            <h3>Final Prototype</h3>
-            <p>
-                The final prototype utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to improve its grip of rocks. Additionally, the end effector employed TPU grippers to better adjust to the rugged edges of rocks. It included both a camera and a laser to assist the controls team.
-            </p>
-            <div class="gallery">
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=End+Effector+CAD" alt="End Effector CAD">
-                    <figcaption>Final Prototype Render</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=Prototype+Testing" alt="Prototype">
-                    <figcaption>Prototype Testing</figcaption>
-                </figure>
+            <div class="project-card fade-in-section">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/600x400?text=End+Effector" alt="End Effector">
+                </div>
+                <div class="card-content">
+                    <h3>Rover End Effector</h3>
+                    <p>Designed a custom gripper utilizing linear actuators and TPU flexible components to handle complex rock geometries and precise tooling tasks.</p>
+                    <div class="tags">
+                        <span class="tag">Mechanism Design</span>
+                        <span class="tag">3D Printing</span>
+                        <span class="tag">Mechatronics</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="project-item">
-            <div class="project-title">Boom Deployment Mechanism</div>
-            <p>
-                As a research assistant for Cornell Space Structures Lab, I am working on a boom deployment mechanism that can deploy an ultra lightweight boom from a CubeSat without the boom buckling or blossoming.
-            </p>
-            <p>
-                To do this, I have designed a low-friction membrane that surrounds the boom at every region, except when the boom exits the CubeSat and holds it tight through springs that are attempting to revert back to their original length.
-            </p>
-            <div class="gallery">
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=Spring+Mechanism" alt="Spring Mechanism">
-                    <figcaption>Early Prototype: Used 4 sets of springs</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=New+Prototype" alt="New Prototype">
-                    <figcaption>New Prototype: Uses 2 sets of springs and membrane</figcaption>
-                </figure>
+            <div class="project-card fade-in-section">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/600x400?text=Boom+Deployment" alt="Boom Mechanism">
+                </div>
+                <div class="card-content">
+                    <h3>Boom Deployment Mechanism</h3>
+                    <p>Research with Cornell Space Structures Lab. Developing a low-friction membrane system to deploy ultra-lightweight booms from CubeSats without buckling.</p>
+                    <div class="tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Space Systems</span>
+                        <span class="tag">Prototyping</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="project-item">
-            <div class="project-title">Automatic Soup Stirrer</div>
-            <p>
-                As a part of MAE 2250 (Mechanical Synthesis), I worked on a semester-long group project to build a consumer-ready product. We built an automatic soup stirrer that would stir soup for an individual who does not have the time.
-            </p>
-            <p>
-                After working through many potential designs as a team and comparing the tests of multiple prototypes, we decided on a final design. I designed and created in CAD the final design shown below almost entirely myself.
-            </p>
-            <div class="gallery">
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=Soup+Stirrer+Render" alt="Soup Stirrer Render">
-                    <figcaption>Final Render in Autodesk Fusion</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://via.placeholder.com/600x400?text=Working+Prototype" alt="Soup Stirrer Test">
-                    <figcaption>Successful test stirring water</figcaption>
-                </figure>
+            <div class="project-card fade-in-section">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/600x400?text=Soup+Stirrer" alt="Soup Stirrer">
+                </div>
+                <div class="card-content">
+                    <h3>Automatic Soup Stirrer</h3>
+                    <p>A consumer product development project for Mechanical Synthesis. Designed and CAD-modeled a fully functional automatic stirring device.</p>
+                    <div class="tags">
+                        <span class="tag">Product Design</span>
+                        <span class="tag">Autodesk Fusion</span>
+                        <span class="tag">Consumer Tech</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="project-item">
-            <div class="project-title">Electrospray Testing & Manufacturing</div>
-            <p>
-                Research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies.
-            </p>
-            <p><em>(Additional details coming soon)</em></p>
         </div>
-
     </section>
 
     <section id="resume">
-        <h2>Resume</h2>
-        <div class="resume-block">
-            <p>
-                <strong>Education:</strong> Cornell University, Mechanical and Aerospace Engineering.<br>
-                <strong>Email:</strong> abr229@cornell.edu
-            </p>
-            <h3>Relevant Coursework</h3>
-            <div class="course-list">
-                <span class="course-tag">Dynamics</span>
-                <span class="course-tag">Introduction to Fluids</span>
-                <span class="course-tag">Mechanics of Materials</span>
-                <span class="course-tag">Mechatronics</span>
-                <span class="course-tag">Heat Transfer</span>
-                <span class="course-tag">Intermediate Dynamics</span>
-                <span class="course-tag">Spacecraft Technology</span>
-                <span class="course-tag">Systems Architecture</span>
+        <div class="resume-container fade-in-section">
+            <div class="resume-text">
+                <h2 style="color: var(--primary); margin-bottom: 15px;">Resume & Education</h2>
+                <p><strong>Cornell University</strong> | Mechanical & Aerospace Engineering</p>
+                <p style="color: var(--text-light); margin-top: 10px;">
+                    Coursework: Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics, Heat Transfer, Spacecraft Technology, Systems Architecture.
+                </p>
             </div>
-            
-            <br>
-            <a href="#" style="display: inline-block; background: #333; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; margin-top: 20px;">Download Full Resume (PDF)</a>
+            <div class="resume-button">
+                <a href="#" class="btn">Download PDF Resume</a>
+            </div>
         </div>
     </section>
 
-    <section id="interests">
-        <h2>Personal Interests</h2>
-        <p>
-            When I'm not in the lab or working on the rover, I enjoy exploring engineering challenges in creative ways. 
-            <em>(You can add more personal hobbies here, such as photography, hiking, or other interests mentioned on your original site.)</em>
-        </p>
-    </section>
-
-    <footer>
-        <p>Contact: <a href="mailto:abr229@cornell.edu">abr229@cornell.edu</a></p>
-        <p>&copy; 2025 Ari Rabinovitz</p>
+    <footer id="contact">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 20px;">Let's Connect</h2>
+        <p style="color: #cbd5e1; margin-bottom: 30px;">I am always interested in new opportunities in aerospace and robotics.</p>
+        <a href="mailto:abr229@cornell.edu" style="font-size: 1.2rem; color: white; border-bottom: 2px solid white;">abr229@cornell.edu</a>
+        <br><br><br>
+        <p style="font-size: 0.8rem; color: #64748b;">&copy; 2025 Ari Rabinovitz. Built with Code.</p>
     </footer>
+
+    <script>
+        // This script handles the "Fade In" animation as you scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-section');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 
 </body>
 </html>
