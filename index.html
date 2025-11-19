@@ -5,372 +5,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ari Rabinovitz | Portfolio</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- VARIABLES & THEME --- */
+        /* --- THEME VARIABLES --- */
         :root {
-            --primary: #0f172a;      /* Dark Navy */
-            --accent: #2563eb;       /* Bright Blue */
-            --bg: #f8fafc;           /* Very Light Grey-Blue */
-            --card-bg: #ffffff;      /* Pure White */
-            --text-main: #334155;    /* Slate Grey */
-            --text-light: #64748b;   /* Lighter Grey */
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --bg-color: #0b0d17;       /* Deep Space Black */
+            --card-bg: #15192b;        /* Lighter Navy */
+            --text-main: #e0e6ed;      /* Off-white */
+            --text-muted: #94a3b8;     /* Grey */
+            --accent: #38bdf8;         /* Cyan */
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); /* Blue to Purple */
         }
 
         /* --- RESET --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
+            background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-            border-radius: 8px;
-        }
-
-        /* --- ANIMATION CLASSES (JS triggers these) --- */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            will-change: opacity, visibility;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        /* --- NAVIGATION (Glassmorphism) --- */
+        /* --- HEADER --- */
         header {
             position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: rgba(11, 13, 23, 0.85);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             padding: 15px 0;
-            transition: padding 0.3s;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-main);
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .hero-content {
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            gap: 60px;
-            width: 100%;
-        }
-
-        .hero-text {
-            flex: 1.2;
-        }
-
-        .hero-image {
-            flex: 0.8;
+            justify-content: center;
             position: relative;
+            padding: 0 20px;
+            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0b0d17 70%);
         }
 
-        .hero-image img {
-            box-shadow: var(--shadow);
-            border: 4px solid white;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.02);
+        .hero-content {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
         }
 
         h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--primary);
             line-height: 1.1;
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: block;
-        }
+        .highlight { color: var(--accent); font-weight: 700; }
 
-        .hero-bio {
+        .hero p {
             font-size: 1.1rem;
-            color: var(--text-light);
+            color: var(--text-muted);
             margin-bottom: 30px;
-            max-width: 600px;
+            max-width: 500px;
         }
 
-        .btn {
+        .btn-primary {
             display: inline-block;
-            background-color: var(--primary);
+            padding: 12px 32px;
+            background: var(--gradient);
             color: white;
-            padding: 12px 30px;
+            text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.4);
-            background-color: #1e293b;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
+
+        .hero-img-wrapper {
+            position: relative;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            transition: transform 0.5s;
+        }
+
+        .hero-img-wrapper:hover img { transform: scale(1.02) rotate(1deg); }
 
         /* --- SECTIONS --- */
-        section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
 
-        .section-title {
+        .section-header { margin-bottom: 60px; }
+        
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 6px;
-            background: var(--accent);
-            margin-top: 10px;
-            border-radius: 3px;
-        }
-
-        /* --- PROJECTS GRID --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .card-image {
-            height: 250px;
-            overflow: hidden;
-            background: #e2e8f0;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-
-        .card-content {
-            padding: 30px;
-        }
-
-        .card-content h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
             margin-bottom: 10px;
         }
 
-        .card-content p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
+        .bar {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
         }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+        /* --- GRID LAYOUT --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .tag {
-            background: #eff6ff;
-            color: var(--accent);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* --- RESUME SECTION --- */
-        .resume-container {
-            background: white;
-            padding: 50px;
+        /* --- CARD DESIGN --- */
+        .card {
+            background: var(--card-bg);
             border-radius: 16px;
-            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.4s, border-color 0.4s;
+            position: relative;
+            opacity: 0; /* For Animation */
+            transform: translateY(30px); /* For Animation */
+        }
+
+        .card.visible {
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .card-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #1e293b; /* Placeholder dark grey */
+        }
+
+        .card-body { padding: 25px; }
+
+        .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: white; }
+        
+        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
+
+        .tag-container { display: flex; gap: 10px; flex-wrap: wrap; }
+        
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* --- RESUME --- */
+        .resume-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
             display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
             align-items: center;
+            justify-content: space-between;
+            gap: 30px;
         }
 
-        .resume-text {
-            flex: 2;
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .resume-button {
-            flex: 1;
-            text-align: center;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            margin-top: 100px;
-        }
-
-        footer a {
-            color: #94a3b8;
-            border-bottom: 1px dotted #94a3b8;
-        }
-
-        footer a:hover {
-            color: white;
-            border-bottom: 1px solid white;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 900px) {
-            .hero-content {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 40px;
-            }
-
-            .hero-text, .hero-image {
-                flex: auto;
-                width: 100%;
-            }
-
-            h1 { font-size: 2.5rem; }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .resume-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                gap: 15px;
-                font-size: 0.85rem;
-            }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-img-wrapper { max-width: 400px; margin: 0 auto; }
+            .resume-box { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -378,10 +240,9 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Ari Rabinovitz</a>
+            <a href="#" class="logo">ARI RABINOVITZ</a>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -390,85 +251,71 @@
         </div>
     </header>
 
-    <div id="home" class="hero fade-in-section">
+    <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <span class="subtitle">Mechanical & Aerospace Engineer</span>
-                <h1>Building Systems for Earth & Mars</h1>
-                <p class="hero-bio">
-                    Hi, I'm Ari. I'm a senior at <strong>Cornell University</strong> and the Arm Lead for the Cornell Mars Rover team. 
-                    I specialize in deployable structures, robotic manipulation, and space systems architecture.
-                </p>
-                <br>
-                <a href="#projects" class="btn">View My Work</a>
+                <h1>Building for <br><span style="color: var(--accent);">Earth & Mars</span></h1>
+                <p>I'm a Mechanical & Aerospace Engineer at Cornell University. I lead the Arm Team for the Cornell Mars Rover and design deployable space structures.</p>
+                <a href="#projects" class="btn-primary">See My Work</a>
             </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/500x600?text=Ari+Rabinovitz" alt="Ari Rabinovitz Profile">
+            <div class="hero-img-wrapper">
+                <img src="profile.jpg" alt="Ari Rabinovitz" onerror="this.src='https://via.placeholder.com/500x600/1e293b/ffffff?text=Upload+profile.jpg'">
             </div>
         </div>
-    </div>
+    </section>
 
     <section id="projects">
-        <h2 class="section-title fade-in-section">Selected Projects</h2>
-        
-        <div class="projects-grid">
+        <div class="section-header">
+            <h2>Selected Projects</h2>
+            <div class="bar"></div>
+        </div>
+
+        <div class="grid">
             
-            <div class="project-card fade-in-section">
-                <div class="card-image">
-                    <img src="https://via.placeholder.com/600x400?text=Robotic+Manipulator" alt="Robotic Arm">
-                </div>
-                <div class="card-content">
+            <div class="card">
+                <img src="arm.jpg" class="card-img" alt="Robotic Arm" onerror="this.style.display='none'">
+                <div class="card-body">
                     <h3>Robotic Manipulator</h3>
-                    <p>Lead engineer for the Cornell Mars Rover arm sub-team. Designed a 5kg-load robotic system capable of dexterous tasks like typing and switch flipping.</p>
-                    <div class="tags">
+                    <p>Lead engineer for the Cornell Mars Rover arm. Designed a 6-DOF system capable of lifting 5kg loads and performing dexterous tasks.</p>
+                    <div class="tag-container">
                         <span class="tag">Robotics</span>
                         <span class="tag">SolidWorks</span>
-                        <span class="tag">Manufacturing</span>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card fade-in-section">
-                <div class="card-image">
-                    <img src="https://via.placeholder.com/600x400?text=End+Effector" alt="End Effector">
-                </div>
-                <div class="card-content">
-                    <h3>Rover End Effector</h3>
-                    <p>Designed a custom gripper utilizing linear actuators and TPU flexible components to handle complex rock geometries and precise tooling tasks.</p>
-                    <div class="tags">
-                        <span class="tag">Mechanism Design</span>
-                        <span class="tag">3D Printing</span>
+            <div class="card">
+                <img src="gripper.jpg" class="card-img" alt="End Effector" onerror="this.style.display='none'">
+                <div class="card-body">
+                    <h3>End Effector</h3>
+                    <p>Custom gripper using linear actuators and TPU flexible components. Features integrated camera and laser systems for operator control.</p>
+                    <div class="tag-container">
                         <span class="tag">Mechatronics</span>
+                        <span class="tag">3D Printing</span>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card fade-in-section">
-                <div class="card-image">
-                    <img src="https://via.placeholder.com/600x400?text=Boom+Deployment" alt="Boom Mechanism">
-                </div>
-                <div class="card-content">
-                    <h3>Boom Deployment Mechanism</h3>
-                    <p>Research with Cornell Space Structures Lab. Developing a low-friction membrane system to deploy ultra-lightweight booms from CubeSats without buckling.</p>
-                    <div class="tags">
-                        <span class="tag">Research</span>
+            <div class="card">
+                <img src="boom.jpg" class="card-img" alt="Boom Mechanism" onerror="this.style.display='none'">
+                <div class="card-body">
+                    <h3>Boom Deployment</h3>
+                    <p>Research on ultra-lightweight boom deployment for CubeSats. Designed a low-friction membrane system to prevent blossoming.</p>
+                    <div class="tag-container">
                         <span class="tag">Space Systems</span>
-                        <span class="tag">Prototyping</span>
+                        <span class="tag">Research</span>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card fade-in-section">
-                <div class="card-image">
-                    <img src="https://via.placeholder.com/600x400?text=Soup+Stirrer" alt="Soup Stirrer">
-                </div>
-                <div class="card-content">
-                    <h3>Automatic Soup Stirrer</h3>
-                    <p>A consumer product development project for Mechanical Synthesis. Designed and CAD-modeled a fully functional automatic stirring device.</p>
-                    <div class="tags">
+            <div class="card">
+                <img src="soup.jpg" class="card-img" alt="Soup Stirrer" onerror="this.style.display='none'">
+                <div class="card-body">
+                    <h3>Auto Soup Stirrer</h3>
+                    <p>A consumer product built for Mechanical Synthesis. Fully functional automatic stirring device modeled in Fusion 360.</p>
+                    <div class="tag-container">
                         <span class="tag">Product Design</span>
-                        <span class="tag">Autodesk Fusion</span>
-                        <span class="tag">Consumer Tech</span>
+                        <span class="tag">Fusion 360</span>
                     </div>
                 </div>
             </div>
@@ -477,49 +324,34 @@
     </section>
 
     <section id="resume">
-        <div class="resume-container fade-in-section">
-            <div class="resume-text">
-                <h2 style="color: var(--primary); margin-bottom: 15px;">Resume & Education</h2>
-                <p><strong>Cornell University</strong> | Mechanical & Aerospace Engineering</p>
-                <p style="color: var(--text-light); margin-top: 10px;">
-                    Coursework: Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics, Heat Transfer, Spacecraft Technology, Systems Architecture.
-                </p>
+        <div class="resume-box">
+            <div>
+                <h2>Resume & Education</h2>
+                <p style="margin-bottom: 10px;"><strong>Cornell University</strong> | Mechanical & Aerospace Engineering</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Relevant Coursework: Spacecraft Technology, Systems Architecture, Intermediate Dynamics.</p>
             </div>
-            <div class="resume-button">
-                <a href="#" class="btn">Download PDF Resume</a>
-            </div>
+            <a href="resume.pdf" class="btn-primary">Download Resume</a>
         </div>
     </section>
 
-    <footer id="contact">
-        <h2 style="color: white; font-size: 2rem; margin-bottom: 20px;">Let's Connect</h2>
-        <p style="color: #cbd5e1; margin-bottom: 30px;">I am always interested in new opportunities in aerospace and robotics.</p>
-        <a href="mailto:abr229@cornell.edu" style="font-size: 1.2rem; color: white; border-bottom: 2px solid white;">abr229@cornell.edu</a>
-        <br><br><br>
-        <p style="font-size: 0.8rem; color: #64748b;">&copy; 2025 Ari Rabinovitz. Built with Code.</p>
-    </footer>
+    <section id="contact" style="text-align: center; padding-top: 50px;">
+        <h2 style="font-size: 2rem;">Let's Connect</h2>
+        <p style="margin-bottom: 20px;">Interested in robotics and space exploration?</p>
+        <a href="mailto:abr229@cornell.edu" style="color: var(--accent); font-size: 1.2rem; text-decoration: none;">abr229@cornell.edu</a>
+        <br><br>
+        <small style="color: #475569;">&copy; 2025 Ari Rabinovitz</small>
+    </section>
 
     <script>
-        // This script handles the "Fade In" animation as you scroll
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, observerOptions);
-
-            const fadeElements = document.querySelectorAll('.fade-in-section');
-            fadeElements.forEach(el => observer.observe(el));
-        });
+        document.querySelectorAll('.card').forEach((el) => observer.observe(el));
     </script>
 
 </body>
