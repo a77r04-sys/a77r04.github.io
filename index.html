@@ -4,68 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ari Rabinovitz | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="nav-placeholder"></div>
 
-    <section class="hero">
-        <h1>Mechanical & Aerospace <br> <span style="color: var(--accent);">Portfolio</span></h1>
-        <p>
-            Senior at <strong>Cornell University</strong>. Lead of the Cornell Mars Rover Arm Sub-team. 
-            Specializing in deployable structures, robotic manipulation, and space systems.
-        </p>
-        <a href="resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">View Resume</a>
+    <section class="hero reveal">
+        <div class="hero-text">
+            <h1>Mechanical & Aerospace <br> <span style="color: var(--accent);">Portfolio</span></h1>
+            <p>Senior at <strong>Cornell University</strong>. Lead of the Cornell Mars Rover Arm Sub-team. Specializing in deployable structures, robotic manipulation, and space systems.</p>
+            <a href="resume.pdf" class="btn" target="_blank">View Resume</a>
+        </div>
+        <div class="hero-accent-box">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">Status</h4>
+            <p style="font-size: 0.95rem;">Currently developing high-load robotic manipulators for the University Rover Competition (URC).</p>
+        </div>
     </section>
 
     <div id="projects" class="grid">
-        <a href="project-arm.html" class="card">
-            <img src="arm.jpg" class="card-img" alt="Robotic Arm" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=Robotic+Arm'">
+        <a href="project-arm.html" class="card reveal">
+            <img src="arm.jpg" class="card-img" alt="Robotic Arm">
             <div class="card-body">
+                <div class="tag">Robotics</div><div class="tag">SolidWorks</div>
                 <h3>Robotic Manipulator Structure</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Lead engineer for the rover's 6-DOF arm, designed for heavy lifting (5kg) and precision tasks.</p>
-                <span class="read-more">View Full Project &rarr;</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Lead engineer for the rover's 6-DOF arm, designed for heavy lifting (5kg).</p>
+                <span style="color: var(--accent); font-weight: 600; display: block; margin-top: 20px;">Explore Project &rarr;</span>
             </div>
         </a>
 
-        <a href="project-effector.html" class="card">
-            <img src="gripper.jpg" class="card-img" alt="End Effector" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=End+Effector'">
+        <a href="project-effector.html" class="card reveal">
+            <img src="gripper.jpg" class="card-img" alt="End Effector">
             <div class="card-body">
+                <div class="tag">Manufacturing</div><div class="tag">Mechatronics</div>
                 <h3>End Effector</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Development of a custom gripper using linear actuators, from initial prototype to final design.</p>
-                <span class="read-more">View Full Project &rarr;</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Development of a custom gripper using linear actuators and TPU flexible components.</p>
+                <span style="color: var(--accent); font-weight: 600; display: block; margin-top: 20px;">Explore Project &rarr;</span>
             </div>
         </a>
-
-        <a href="project-boom.html" class="card">
-            <img src="boom.jpg" class="card-img" alt="Boom Mechanism" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=Boom+Mechanism'">
-            <div class="card-body">
-                <h3>Boom Deployment Mechanism</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Research with Cornell Space Structures Lab on ultra-lightweight boom deployment for CubeSats.</p>
-                <span class="read-more">View Full Project &rarr;</span>
-            </div>
-        </a>
-
-        <a href="project-soup.html" class="card">
-            <img src="soup.jpg" class="card-img" alt="Soup Stirrer" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=Soup+Stirrer'">
-            <div class="card-body">
-                <h3>Automatic Soup Stirrer</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">A consumer product design project. Fully functional prototype modeled in Fusion 360.</p>
-                <span class="read-more">View Full Project &rarr;</span>
-            </div>
-        </a>
-    </div>
+        </div>
 
     <footer>
-        <p>Contact: <a href="mailto:abr229@cornell.edu" style="color: var(--accent); font-weight: 600;">abr229@cornell.edu</a></p>
+        <p>Contact: <a href="mailto:abr229@cornell.edu" style="color: var(--accent);">abr229@cornell.edu</a></p>
     </footer>
 
     <script>
-        fetch('navbar.html')
-            .then(res => res.text())
-            .then(data => { document.getElementById('nav-placeholder').innerHTML = data; });
+        // Load Navbar
+        fetch('navbar.html').then(res => res.text()).then(data => { document.getElementById('nav-placeholder').innerHTML = data; });
+
+        // Scroll Animation Script
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.onload = reveal; // Trigger on load
     </script>
 </body>
 </html>
