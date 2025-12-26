@@ -4,59 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soup Stirrer | Ari Rabinovitz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="nav-placeholder"></div>
     <nav class="breadcrumb reveal">
         <a href="index.html">Projects</a> / <span>Automatic Soup Stirrer</span>
     </nav>
-    <div class="project-hero">
+
+    <div class="project-hero reveal">
         <h1>Automatic Soup Stirrer</h1>
         <p class="intro-text">
-            Designed as part of MAE 2250 (Mechanical Synthesis). A consumer-ready device built to automate the stirring process for home cooks.
+            As a part of MAE 2250 (Mechanical Synthesis), I worked on a semester-long group project to build a consumer-ready project. We built an automatic soup stirrer that would stir soup for an individual who does not have the time.
         </p>
         <div class="image-container">
-            <img src="soup.jpg" alt="Automatic Soup Stirrer Render">
+            <video width="100%" controls>
+                <source src="soup-test.mp4" type="video/mp4">
+            </video>
+            <div class="caption">Final product successfully stirring water during testing.</div>
         </div>
     </div>
 
-    <div class="content-block">
-        <h2>Design Process</h2>
+    <div class="content-block reveal">
+        <h2>Final Design</h2>
         <p>
-            Our goal was to build a consumer-ready product for individuals who do not have the time to constantly monitor simmering soups. After comparing multiple prototypes as a team, we settled on a gantry-style design.
-        </p>
-        <p>
-            I was responsible for the final CAD design (Autodesk Fusion), handling the integration of the motor housing, stirring paddle, and pot-clamping mechanism.
+            After working through many potential designs as a team and comparing the tests of multiple prototypes, we decided on a final design. I designed and created in CAD the final design, shown here, almost entirely myself.
         </p>
         <div class="image-container">
-            <img src="soup-render.jpg" alt="Final Fusion 360 Render" onerror="this.style.display='none'">
-            <div class="caption">Final design rendered in Autodesk Fusion</div>
+            <img src="soup-render.jpg" alt="Final Render">
+            <div class="caption">The final design of our soup stirrer rendered in AutoDesk Fusion.</div>
         </div>
     </div>
 
-    <div class="content-block">
-        <h2>Prototyping & Testing</h2>
-        <p>
-            We validated the design through physical testing, ensuring the device could maintain consistent stirring speed in fluids of varying viscosity (from water to thick stews).
-        </p>
-        <div class="image-container">
-            <img src="soup-test.jpg" alt="Prototype Testing" onerror="this.style.display='none'">
-            <div class="caption">Successful test of the final product stirring water</div>
-        </div>
-    </div>
-
-    <footer>
-        <a href="index.html">&larr; Back to Portfolio</a>
-    </footer>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-    </script>
+    <footer><a href="index.html" style="color: var(--accent); font-weight: 600;">&larr; Back to Projects</a></footer>
+    <script src="script.js"></script>
 </body>
 </html>

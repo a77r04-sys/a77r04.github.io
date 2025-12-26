@@ -4,52 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotic Manipulator | Ari Rabinovitz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div id="nav-placeholder"></div>
     <nav class="breadcrumb reveal">
         <a href="index.html">Projects</a> / <span>Robotic Manipulator Structure</span>
     </nav>
-    <div class="project-hero">
+
+    <div class="project-hero reveal">
         <h1>Robotic Manipulator Structure</h1>
         <p class="intro-text">
-            Lead of the arm sub-team for the Cornell Mars Rover project. The manipulator is a custom 6-DOF robotic arm designed to balance heavy lifting capabilities with fine motor dexterity.
+            I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). 
         </p>
         <div class="image-container">
-            <img src="arm.jpg" alt="Robotic Arm Main View">
+            <video width="100%" controls autoplay muted loop>
+                <source src="arm-video.mp4" type="video/mp4">
+            </video>
+            <div class="caption">Demonstration of the 6-DOF manipulator in motion.</div>
         </div>
     </div>
 
-    <div class="content-block">
-        <h2>Design Requirements</h2>
+    <div class="content-block reveal">
+        <h2>Technical Overview</h2>
         <p>
-            The arm is engineered to meet the strict requirements of the University Rover Competition (URC). It must be capable of lifting loads up to 5kg (such as rocks or equipment caches) while maintaining the precision required for dexterous tasks like typing on a keyboard, screwing in fasteners, moving a joystick, and flipping switches.
-        </p>
-    </div>
-
-    <div class="content-block">
-        <h2>Manufacturing & Integration</h2>
-        <p>
-            My role involves overseeing the full lifecycle of the arm, from initial CAD design to manufacturing and integration. The system utilizes a combination of high-torque motors and custom machined structural components to ensure rigidity and reliability in a simulated Martian environment.
+            The robotic manipulator is a custom system designed to meet the rigorous demands of the URC. It is engineered to carry up to 5kg while maintaining the precision required for dexterous tasks. My role involves overseeing the arm sub-team throughout the design, CAD, and manufacturing phases to ensure full mechanical integration with the rover chassis.
         </p>
         <div class="image-container">
-            <img src="arm-detail.jpg" alt="Arm Detail View" onerror="this.style.display='none'">
-            <div class="caption">Detailed view of the joint structure</div>
+            <img src="arm.HEIC" alt="Robotic Arm Structure">
+            <div class="caption">Final structural assembly of the robotic manipulator.</div>
         </div>
     </div>
 
-    <footer>
-        <a href="index.html">&larr; Back to Portfolio</a>
-    </footer>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-    </script>
+    <footer><a href="index.html" style="color: var(--accent); font-weight: 600;">&larr; Back to Projects</a></footer>
+    <script src="script.js"></script>
 </body>
 </html>

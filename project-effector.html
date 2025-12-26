@@ -4,62 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>End Effector | Ari Rabinovitz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="nav-placeholder"></div>
     <nav class="breadcrumb reveal">
         <a href="index.html">Projects</a> / <span>End Effector</span>
     </nav>
-    <div class="project-hero">
-        <h1>Rover End Effector</h1>
+
+    <div class="project-hero reveal">
+        <h1>End Effector</h1>
         <p class="intro-text">
-            As part of the Cornell Mars Rover team, I designed and built an end effector mounted onto the rover's arm. This system is critical for picking up rocks of complicated geometry, carrying up to 5 kg, and completing dexterous tasks such as typing, screwing, and flipping switches.
+            As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm. This arm is used to pick up rocks of complicated geometry, carry up to 5 kg, and complete several dexterous tasks such as typing on a keyboard, screwing in a screw, moving around a joystick, and flipping switches.
         </p>
         <div class="image-container">
-            <img src="gripper.jpg" alt="Final End Effector Design">
+            <video width="100%" controls>
+                <source src="effector-test.mp4" type="video/mp4">
+            </video>
+            <div class="caption">Testing the dexterity of the final end effector prototype.</div>
         </div>
     </div>
 
-    <div class="content-block">
+    <div class="content-block reveal">
         <h2>01. First Prototype</h2>
         <p>
-            The first prototype of the end effector utilized a four-linkage system and a DC motor. The design incorporated a camera and a self-actuating screwdriver mechanism to assist with equipment servicing tasks.
-        </p>
-        <p>
-            <strong>Outcome:</strong> Unfortunately, the prototype had too much total weight, and the 3D printed components could not sustain the stress of carrying the maximum required load of 5kg. This failure led to a complete redesign of the gripping mechanics.
+            The first prototype of the end effector utilized a four-linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver. Unfortunately, the prototype had too much total weight and the 3D prints could not sustain carrying the maximum load of 5kg.
         </p>
         <div class="image-container">
-            <img src="gripper-proto1.jpg" alt="First Prototype" onerror="this.style.display='none'"> 
-            <div class="caption">The four-linkage system (Prototype 1)</div>
+            <img src="gripper-proto1.jpg" alt="First Prototype">
+            <div class="caption">Initial four-linkage design concept.</div>
         </div>
     </div>
 
-    <div class="content-block">
+    <div class="content-block reveal">
         <h2>02. Final Prototype</h2>
         <p>
-            The final prototype utilized a linear actuator and springs to create a gripping mechanism that could "bend in" more, allowing the end effector to improve its grip on irregular rocks.
-        </p>
-        <p>
-            Additionally, the end effector employed <strong>TPU (flexible) grippers</strong> to better adjust to the rugged edges of rocks. The end effector had both a camera and a laser to make it easier for the controls team to align the arm. To save weight, the self-actuating screwdriver was removed in favor of the improved gripping capability.
+            The final prototype of the end effector utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to improve its grip of rocks. Additionally, the end effector employed TPU grippers to better adjust to the rugged edges of rocks. The end effector had both a camera and a laser to make it easier for the controls team to use. This end effector no longer had the self-actuating screwdriver.
         </p>
         <div class="image-container">
-            <img src="gripper-final.jpg" alt="Final Prototype" onerror="this.style.display='none'">
-            <div class="caption">Final Linear Actuator Design with TPU Grippers</div>
+            <img src="gripper-final.jpg" alt="Final Prototype">
+            <div class="caption">Final design featuring linear actuation and TPU flexible grippers.</div>
         </div>
     </div>
 
-    <footer>
-        <a href="index.html">&larr; Back to Portfolio</a>
-    </footer>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-    </script>
+    <footer><a href="index.html" style="color: var(--accent); font-weight: 600;">&larr; Back to Projects</a></footer>
+    <script src="script.js"></script>
 </body>
 </html>
