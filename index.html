@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ari Rabinovitz | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,55 +20,52 @@
         <a href="resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">View Resume</a>
     </section>
 
-    <div class="grid">
-        
+    <div id="projects" class="grid">
         <a href="project-arm.html" class="card">
-            <img src="arm.jpg" class="card-img" alt="Robotic Arm" onerror="this.style.display='none'">
+            <img src="arm.jpg" class="card-img" alt="Robotic Arm" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=Robotic+Arm'">
             <div class="card-body">
                 <h3>Robotic Manipulator Structure</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Lead engineer for the rover's 6-DOF arm, designed for heavy lifting (5kg) and precision tasks.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Lead engineer for the rover's 6-DOF arm, designed for heavy lifting (5kg) and precision tasks.</p>
                 <span class="read-more">View Full Project &rarr;</span>
             </div>
         </a>
 
         <a href="project-effector.html" class="card">
-            <img src="gripper.jpg" class="card-img" alt="End Effector" onerror="this.style.display='none'">
+            <img src="gripper.jpg" class="card-img" alt="End Effector" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=End+Effector'">
             <div class="card-body">
                 <h3>End Effector</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Development of a custom gripper using linear actuators, from initial prototype to final design.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Development of a custom gripper using linear actuators, from initial prototype to final design.</p>
                 <span class="read-more">View Full Project &rarr;</span>
             </div>
         </a>
 
         <a href="project-boom.html" class="card">
-            <img src="boom.jpg" class="card-img" alt="Boom Mechanism" onerror="this.style.display='none'">
+            <img src="boom.jpg" class="card-img" alt="Boom Mechanism" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=Boom+Mechanism'">
             <div class="card-body">
                 <h3>Boom Deployment Mechanism</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Research with Cornell Space Structures Lab on ultra-lightweight boom deployment for CubeSats.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Research with Cornell Space Structures Lab on ultra-lightweight boom deployment for CubeSats.</p>
                 <span class="read-more">View Full Project &rarr;</span>
             </div>
         </a>
 
         <a href="project-soup.html" class="card">
-            <img src="soup.jpg" class="card-img" alt="Soup Stirrer" onerror="this.style.display='none'">
+            <img src="soup.jpg" class="card-img" alt="Soup Stirrer" onerror="this.src='https://via.placeholder.com/600x400/15192b/38bdf8?text=Soup+Stirrer'">
             <div class="card-body">
                 <h3>Automatic Soup Stirrer</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">A consumer product design project. Fully functional prototype modeled in Fusion 360.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">A consumer product design project. Fully functional prototype modeled in Fusion 360.</p>
                 <span class="read-more">View Full Project &rarr;</span>
             </div>
         </a>
-
     </div>
 
     <footer>
-        <p>Contact: <a href="mailto:abr229@cornell.edu" style="color: white;">abr229@cornell.edu</a></p>
+        <p>Contact: <a href="mailto:abr229@cornell.edu" style="color: var(--accent); font-weight: 600;">abr229@cornell.edu</a></p>
     </footer>
+
     <script>
         fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
+            .then(res => res.text())
+            .then(data => { document.getElementById('nav-placeholder').innerHTML = data; });
     </script>
 </body>
 </html>
