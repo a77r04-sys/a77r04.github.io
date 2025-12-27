@@ -8,29 +8,23 @@
 <body>
     <div id="nav-placeholder"></div>
     <div class="container reveal">
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Electrospray Testing and Manufacturing</h1>
-        <div class="skills-container">
-            <span class="skill-chip">LabVIEW</span><span class="skill-chip">Vacuum Systems</span><span class="skill-chip">HV Sensing</span><span class="skill-chip">Soldering</span>
+        <h1>Electrospray Testing and Manufacturing</h1>
+        <div style="margin: 20px 0 40px;">
+            <span class="skill-chip">Vacuum Systems</span><span class="skill-chip">HV Sensing</span><span class="skill-chip">Soldering</span><span class="skill-chip">LabVIEW</span>
         </div>
 
         <div class="split-block reveal">
             <div class="txt">
-                <p>As a research assistant for ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could indeed last 10 times as long as current technology. The tests were completed by creating electric fields at very high voltages that pulled apart the nanoparticles into their cations and anions, and shot the attractive particles through an aperture in stainless steel plates. By measuring the current that the particles hit a conductive plate through a high voltage sensing circuit, we measured the thrust and specific impulse of these nanoparticles.</p>
+                <p>As a research assistant for ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could indeed last 10 times as long as current technology. The tests were completed by creating electric fields at very high voltages that pulled apart the nanoparticles into their cations and anions, and shot the attractive particles through an aperture in stainless steel plates. By measuring the current that the particles hit a conductive plate through a high voltage sensing circuit, we measured the thrust and specific impulse of these nanoparticles. The testing was completed in a vacuum chamber, so precision was key. That is why I implemented a double goniometer setup, which allowed for rotation of the emitter of the nanoparticles.</p>
             </div>
             <div class="frame"><img src="electro-chamber.jpg"><div class="cap">Electrospray testing structure inside vacuum chamber</div></div>
         </div>
 
-        <div class="split-block reverse reveal">
-            <div class="txt">
-                <p>The testing was completed in a vacuum chamber, so precision was key. That is why I implemented a double goniometer setup, which allowed for rotation of the emitter of the nanoparticles. I soldered the components of the circuit board together, which allows for accurate measurement of current at voltages up to 10kV.</p>
-            </div>
-            <div class="frame"><img src="electro-circuit.jpg"><div class="cap">High voltage circuit board</div></div>
-        </div>
-
         <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="electro-setup.jpg"><div class="cap">Electrospray aimed at time of flight instrument</div></div>
+            <div class="frame"><img src="electro-setup.jpg"><div class="cap">Testing setup for calculating time of flight</div></div>
+            <div class="frame"><img src="electro-circuit.jpg"><div class="cap">High voltage circuit board (up to 10kV)</div></div>
             <div class="frame"><img src="electro-emitter.jpg"><div class="cap">Electrospray emitter with tungsten needle</div></div>
-            <div class="frame"><img src="electro-emitter-detail.jpg"><div class="cap">Detail view of the emitter assembly</div></div>
+            <div class="frame"><img src="electro-detail.jpg"><div class="cap">Emitter assembly detail</div></div>
         </div>
     </div>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
