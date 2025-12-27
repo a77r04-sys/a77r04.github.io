@@ -17,59 +17,35 @@
 
     <div id="projects" class="grid">
         <a href="project-arm.html" class="card reveal">
-            <img src="arm.HEIC" class="card-img" alt="Robotic Arm">
-            <div class="card-body">
-                <h3>Robotic Manipulator Structure</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Lead engineer for the rover's 6-DOF arm, designed for heavy lifting (5kg) and precision tasks.</p>
-                <span style="color: var(--accent); font-weight: 600; display: block; margin-top: 15px;">Explore Project &rarr;</span>
-            </div>
+            <img src="arm.jpg" class="card-img" alt="Robotic Arm">
+            <div class="card-body"><h3>Robotic Manipulator Structure</h3><p>Lead engineer for the Cornell Mars Rover 6-DOF arm.</p></div>
         </a>
-
         <a href="project-effector.html" class="card reveal">
             <img src="gripper.jpg" class="card-img" alt="End Effector">
-            <div class="card-body">
-                <h3>End Effector</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Development of a custom gripper using linear actuators, from initial prototype to final design.</p>
-                <span style="color: var(--accent); font-weight: 600; display: block; margin-top: 15px;">Explore Project &rarr;</span>
-            </div>
+            <div class="card-body"><h3>End Effector</h3><p>Custom linear-actuated gripper with TPU components.</p></div>
         </a>
-
         <a href="project-boom.html" class="card reveal">
             <img src="boom.jpg" class="card-img" alt="Boom Mechanism">
-            <div class="card-body">
-                <h3>Boom Deployment Mechanism</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Research with Cornell Space Structures Lab on ultra-lightweight boom deployment for CubeSats.</p>
-                <span style="color: var(--accent); font-weight: 600; display: block; margin-top: 15px;">Explore Project &rarr;</span>
-            </div>
+            <div class="card-body"><h3>Boom Deployment Mechanism</h3><p>Research on ultra-lightweight boom deployment for CubeSats.</p></div>
         </a>
-
         <a href="project-soup.html" class="card reveal">
             <img src="soup.jpg" class="card-img" alt="Soup Stirrer">
-            <div class="card-body">
-                <h3>Automatic Soup Stirrer</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">A consumer product design project. Fully functional prototype modeled in Fusion 360.</p>
-                <span style="color: var(--accent); font-weight: 600; display: block; margin-top: 15px;">Explore Project &rarr;</span>
-            </div>
+            <div class="card-body"><h3>Automatic Soup Stirrer</h3><p>MAE 2250 Consumer project designed in Fusion 360.</p></div>
         </a>
     </div>
 
-    <footer>
-        <p>Contact: <a href="mailto:abr229@cornell.edu" style="color: var(--accent);">abr229@cornell.edu</a></p>
-    </footer>
+    <footer><p>Contact: <a href="mailto:abr229@cornell.edu" style="color: var(--accent);">abr229@cornell.edu</a></p></footer>
 
     <script>
         fetch('navbar.html').then(res => res.text()).then(data => { document.getElementById('nav-placeholder').innerHTML = data; });
-
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) { reveals[i].classList.add("active"); }
+                if (reveals[i].getBoundingClientRect().top < windowHeight - 150) { reveals[i].classList.add("active"); }
             }
         }
-        window.addEventListener("scroll", reveal);
-        window.onload = reveal;
+        window.addEventListener("scroll", reveal); window.onload = reveal;
     </script>
 </body>
 </html>
