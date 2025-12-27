@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ari Rabinovitz | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,45 +9,42 @@
     <div id="nav-placeholder"></div>
 
     <section class="hero-split reveal">
-        <div class="hero-left">
-            <h1>Ari<br>Rabinovitz</h1>
-        </div>
+        <div class="hero-left"><h1>Ari<br>Rabinovitz</h1></div>
         <div class="hero-right">
             <p>Hi! My name is Ari Rabinovitz, and I am a senior at Cornell University studying Mechanical and Aerospace Engineering. I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
-            <p>I have taken numerous engineering courses, including <em>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics</em>, and <em>Heat Transfer</em>. This school year, I am excited to take classes related to space, including <em>Intermediate Dynamics</em> and <em>Spacecraft Technology and Systems Architecture</em>.</p>
+            <p>I have taken numerous engineering courses, including <i>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics,</i> and <i>Heat Transfer</i>. This school year, I am excited to take classes related to space, including <i>Intermediate Dynamics</i> and <i>Spacecraft Technology and Systems Architecture</i>.</p>
         </div>
     </section>
 
-    <h2 style="text-align:center; margin-top:50px;">Projects</h2>
-
+    <h2 class="section-title">Projects</h2>
     <div class="project-grid reveal">
         <a href="project-arm.html" class="grid-item">
-            <img src="home-arm.jpg" alt="Robotic Arm">
-            <div class="grid-overlay"><h3>Structure of Robotic Manipulator</h3></div>
+            <img src="home-arm.jpg"><div class="grid-overlay"><h3>Structure of Robotic Manipulator</h3></div>
         </a>
         <a href="project-effector.html" class="grid-item">
-            <img src="home-effector.jpg" alt="End Effector">
-            <div class="grid-overlay"><h3>End Effector</h3></div>
+            <img src="home-effector.jpg"><div class="grid-overlay"><h3>End Effector</h3></div>
         </a>
         <a href="project-electrospray.html" class="grid-item">
-            <img src="home-electro.jpg" alt="Electrospray">
-            <div class="grid-overlay"><h3>Electrospray Research</h3></div>
+            <img src="home-electro.jpg"><div class="grid-overlay"><h3>Electrospray Testing and Manufacturing</h3></div>
         </a>
         <a href="project-boom.html" class="grid-item">
-            <img src="home-boom.jpg" alt="Boom Deployment">
-            <div class="grid-overlay"><h3>Boom Deployment Mechanism</h3></div>
+            <img src="home-boom.jpg"><div class="grid-overlay"><h3>Boom Deployment Mechanism</h3></div>
         </a>
         <a href="project-soup.html" class="grid-item">
-            <img src="home-soup.jpg" alt="Soup Stirrer">
-            <div class="grid-overlay"><h3>Automatic Soup Stirrer</h3></div>
+            <img src="home-soup.jpg"><div class="grid-overlay"><h3>Automatic Soup Stirrer</h3></div>
         </a>
         <a href="project-blade.html" class="grid-item">
-            <img src="home-blade.jpg" alt="Blade Design">
-            <div class="grid-overlay"><h3>Airfoil Blade</h3></div>
+            <img src="home-blade.jpg"><div class="grid-overlay"><h3>Airfoil Blade</h3></div>
         </a>
     </div>
 
-    <footer>Contact: abr229@cornell.edu</footer>
+    <h2 class="section-title">Personal Interests</h2>
+    <div class="project-grid reveal">
+        <div class="grid-item"><img src="tennis.jpg"><div class="grid-overlay"><p>I've played tennis since I was five. Even now, I play multiple times a week.</p></div></div>
+        <div class="grid-item"><img src="boardgames.jpg"><div class="grid-overlay"><p>I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</p></div></div>
+        <div class="grid-item"><img src="hiking.jpg"><div class="grid-overlay"><p>I love to hike. My favorite place to hike is Acadia National Park in Maine.</p></div></div>
+        <div class="grid-item"><img src="travel.jpg"><div class="grid-overlay"><p>Seeing new views that make me feel awestruck is the main reason I like to travel.</p></div></div>
+    </div>
 
     <script>
         fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
