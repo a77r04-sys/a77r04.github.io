@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Ari Rabinovitz | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
@@ -12,12 +11,13 @@
     <section class="hero-split reveal">
         <div class="hero-left"><h1>Ari<br>Rabinovitz</h1></div>
         <div class="hero-right">
-            <p>Hi! My name is Ari Rabinovitz, and I am a senior at Cornell University studying Mechanical and Aerospace Engineering. I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
+            <p style="color: white; font-weight: 600;">Mechanical & Aerospace Engineering Senior at Cornell University.</p>
+            <p>I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
             <p>I have taken numerous engineering courses, including <i>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics,</i> and <i>Heat Transfer</i>. This school year, I am excited to take classes related to space, including <i>Intermediate Dynamics</i> and <i>Spacecraft Technology and Systems Architecture</i>.</p>
         </div>
     </section>
 
-    <div id="projects" class="section-header reveal"><h2>Selected Projects</h2><div class="line"></div></div>
+    <div id="projects" class="section-header reveal"><h2>Selected Works</h2></div>
     <div class="project-grid reveal">
         <a href="project-arm.html" class="grid-item">
             <img src="home-arm.jpg"><div class="grid-overlay"><h3>Robotic Manipulator</h3></div>
@@ -39,23 +39,28 @@
         </a>
     </div>
 
-    <div id="interests" class="section-header reveal"><h2>Interests</h2><div class="line"></div></div>
-    <div class="project-grid reveal" style="border-bottom:none;">
-        <div class="grid-item"><img src="tennis.jpg"><div class="grid-overlay"><p>I've played tennis since I was five. Even now, I play multiple times a week.</p></div></div>
-        <div class="grid-item"><img src="boardgames.jpg"><div class="grid-overlay"><p>I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</p></div></div>
-        <div class="grid-item"><img src="hiking.jpg"><div class="grid-overlay"><p>I love to hike. My favorite place to hike is Acadia National Park in Maine.</p></div></div>
-        <div class="grid-item"><img src="travel.jpg"><div class="grid-overlay"><p>Seeing new views that make me feel awestruck is the main reason I like to travel.</p></div></div>
+    <div id="interests" class="section-header reveal"><h2>Interests</h2></div>
+    <div class="interest-grid reveal">
+        <div class="grid-item">
+            <img src="tennis.jpg">
+            <div class="grid-overlay"><p style="padding:40px;">I've played tennis since I was five. Even now, I play multiple times a week.</p></div>
+        </div>
+        <div class="grid-item">
+            <img src="boardgames.jpg">
+            <div class="grid-overlay"><p style="padding:40px;">I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</p></div>
+        </div>
+        <div class="grid-item">
+            <img src="hiking.jpg">
+            <div class="grid-overlay"><p style="padding:40px;">I love to hike. My favorite place to hike is Acadia National Park in Maine.</p></div>
+        </div>
     </div>
 
-    <footer>Contact: abr229@cornell.edu</footer>
-    <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <footer>&copy; 2025 Ari Rabinovitz — abr229@cornell.edu</footer>
 
     <script>
         fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
         function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100){reveals[i].classList.add("active");}}}
         window.addEventListener("scroll",reveal);window.onload=reveal;
-        const btn=document.getElementById("back-to-top");
-        window.onscroll=()=>{if(window.scrollY>400)btn.classList.add("visible");else btn.classList.remove("visible");};
     </script>
 </body>
 </html>

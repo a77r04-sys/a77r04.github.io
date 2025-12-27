@@ -2,46 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Structure of Robotic Manipulator</title>
+    <title>Robotic Manipulator | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
     <div class="project-container">
-        <div class="project-hero reveal"><h1 class="project-title">Structure of Robotic Manipulator</h1></div>
+        <div class="project-hero reveal"><h1 class="project-title">Structure of Robotic<br>Manipulator</h1></div>
 
         <div class="split-row reveal">
             <div class="text-content">
-                <h2>The Challenge</h2>
                 <p>In my junior year, I designed the structure of the robotic manipulator for the Cornell Mars Rover Project Team. I redesigned the locations of the motors, moving one of the motors to the elbow of the manipulator, in order to reduce the moment created on the base of the robotic manipulator.</p>
                 <p>My Final Design Review presentation can be found at: <a href="https://docs.google.com/presentation/d/1L-skaBkut9bf4dD5_VaHulfrk5CCEFDMjVNFpnK_-dg/edit?usp=sharing" target="_blank" style="color:var(--accent); text-decoration:underline;">FDR Link</a></p>
             </div>
             <div class="image-frame">
                 <video controls autoplay muted loop><source src="arm-video-1.mp4"></video>
-                <div class="caption">Joint assembly and mobility test</div>
+                <div class="caption">Mobility and joint articulation test</div>
             </div>
         </div>
 
         <div class="split-row reverse reveal">
             <div class="text-content">
-                <h2>Analysis & Testing</h2>
-                <p>I took the lead in assembling, wiring, and testing the arm. Finite Element Analysis (FEA) was performed on critical joints in the wrist region to ensure they could handle peak operational torque without failure.</p>
+                <p>I took the lead in assembling, wiring, and testing the arm. Finite Element Analysis (FEA) was performed on critical joints to ensure the manipulator could sustain the required 5kg load at full extension without structural deflection.</p>
             </div>
             <div class="image-frame">
                 <img src="arm-fea.jpg">
-                <div class="caption">FEA of wrist region structural joints</div>
+                <div class="caption">FEA analysis of the redesigned wrist joint</div>
             </div>
         </div>
 
-        <div class="reveal" style="margin-bottom:100px;">
+        <div class="reveal">
             <div class="image-frame">
                 <img src="arm-assembly.jpg">
-                <div class="caption">Final robotic manipulator assembly</div>
+                <div class="caption">Full 6-DOF robotic manipulator assembly</div>
             </div>
         </div>
     </div>
-    <footer><a href="index.html#projects">← Back to Projects</a></footer>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>
