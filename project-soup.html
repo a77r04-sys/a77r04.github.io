@@ -7,21 +7,31 @@
 </head>
 <body>
     <div id="nav-placeholder"></div>
+    <div class="project-container">
+        <div class="project-hero reveal"><h1 class="project-title">Automatic Soup Stirrer</h1></div>
 
-    <div class="container reveal">
-        <h1 class="project-title">Automatic Soup Stirrer</h1>
-        
-        <div class="text-block">
-            <p>As a part of MAE 2250 (Mechanical Synthesis), I worked on a semester-long group project to build a consumer-ready project. We built an automatic soup stirrer that would stir soup for an individual who does not have the time. After working through many potential designs as a team and comparing the tests of multiple prototypes, we decided on a final design. I designed and created in CAD the final design, shown here, almost entirely myself.</p>
+        <div class="split-row reveal">
+            <div class="text-content">
+                <h2>The Concept</h2>
+                <p>As a part of MAE 2250 (Mechanical Synthesis), I worked on a semester-long group project to build a consumer-ready project. We built an automatic soup stirrer that would stir soup for an individual who does not have the time.</p>
+            </div>
+            <div class="image-frame">
+                <img src="soup-proto.jpg">
+                <div class="caption">Early low-cost physical prototype</div>
+            </div>
         </div>
 
-        <img src="soup-proto.jpg" class="media-full">
-        <div class="caption">Early low-cost prototype</div>
-
-        <img src="soup-test.jpg" class="media-full">
-        <div class="caption">Test of final product<br>A still image from one of our tests where we successfully stirred water</div>
+        <div class="split-row reverse reveal">
+            <div class="text-content">
+                <h2>Final Execution</h2>
+                <p>After working through many potential designs as a team, we decided on a final design. I designed and created in CAD the final design almost entirely myself.</p>
+            </div>
+            <div class="image-frame">
+                <img src="soup-test.jpg">
+                <div class="caption">Validation: Successfully stirring water in final tests</div>
+            </div>
+        </div>
     </div>
-
-    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

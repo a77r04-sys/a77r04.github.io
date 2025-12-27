@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Electrospray Testing and Manufacturing</title>
+    <title>Electrospray Testing</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
+    <div class="project-container">
+        <div class="project-hero reveal"><h1 class="project-title">Electrospray Testing and Manufacturing</h1></div>
 
-    <div class="container reveal">
-        <h1 class="project-title">Electrospray Testing and Manufacturing</h1>
-        
-        <div class="text-block">
-            <p>As a research assistant for ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could indeed last 10 times as long as current technology. The tests were completed by creating electric fields at very high voltages that pulled apart the nanoparticles into their cations and anions, and shot the attractive particles through an aperture in stainless steel plates. By measuring the current that the particles hit a conductive plate through a high voltage sensing circuit, we measured the thrust and specific impulse of these nanoparticles. The testing was completed in a vacuum chamber, so precision was key. That is why I implemented a double goniometer setup, which allowed for rotation of the emitter of the nanoparticles.</p>
+        <div class="split-row reveal">
+            <div class="text-content">
+                <h2>The Research</h2>
+                <p>As a research assistant for ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could indeed last 10 times as long as current technology.</p>
+                <p>The testing was completed in a vacuum chamber, so precision was key. That is why I implemented a double goniometer setup, which allowed for rotation of the emitter.</p>
+            </div>
+            <div class="image-frame">
+                <img src="electro-chamber.jpg">
+                <div class="caption">Setup inside the vacuum chamber</div>
+            </div>
         </div>
 
-        <img src="electro-chamber.jpg" class="media-full">
-        <div class="caption">Electrospray testing structure inside vacuum chamber<br>In this image, the electrospray was aimed at an instrument that can be used for calculating the time of flight</div>
-
-        <img src="electro-circuit.jpg" class="media-full">
-        <div class="caption">High voltage circuit board<br>I soldered the components together, which allows for accurate measurement of current at voltages up to 10kV</div>
-
-        <img src="electro-emitter.jpg" class="media-full">
-        <div class="caption">Electrospray emitter with tungsten needle</div>
+        <div class="split-row reverse reveal">
+            <div class="text-content">
+                <h2>Diagnostics</h2>
+                <p>I soldered a high voltage sensing circuit board, which allows for accurate measurement of current at voltages up to 10kV. By measuring the current that the particles hit a conductive plate, we calculated thrust and specific impulse.</p>
+            </div>
+            <div class="image-frame">
+                <img src="electro-circuit.jpg">
+                <div class="caption">High voltage sensing circuit board</div>
+            </div>
+        </div>
     </div>
-
-    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

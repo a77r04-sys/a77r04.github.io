@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>End Effector - Final Prototype</title>
+    <title>Final Prototype</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
+    <div class="project-container">
+        <div class="project-hero reveal"><h1 class="project-title">End Effector - Final Prototype</h1></div>
 
-    <div class="container reveal">
-        <h1 class="project-title">End Effector - Final Prototype</h1>
-        
-        <div class="text-block">
-            <p>The final prototype of the end effector utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to better clamp onto rocks. Additionally, the end effector employed TPU grippers to better adjust to the rugged edges of rocks. The end effector had both a camera and a laser to make it easier for the controls team to use.</p>
+        <div class="split-row reveal">
+            <div class="text-content">
+                <h2>Optimized Gripping</h2>
+                <p>The final prototype utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to better clamp onto rocks. Additionally, the end effector employed TPU grippers to adjust to rugged edges.</p>
+            </div>
+            <div class="image-frame">
+                <img src="effector-p2-cylinder.jpg">
+                <div class="caption">Grabbing onto heavy cylinder</div>
+            </div>
         </div>
 
-        <img src="effector-p2-cylinder.jpg" class="media-full">
-        <div class="caption">Grabbing onto heavy cylinder</div>
-
-        <img src="effector-p2-rock.jpg" class="media-full">
-        <div class="caption">Grabbing circular rock<br>The springs extended to allow the end effector to clamp the rock more securely</div>
-
-        <img src="effector-p2-laser.jpg" class="media-full">
-        <div class="caption">Laser side</div>
+        <div class="split-row reverse reveal">
+            <div class="text-content">
+                <h2>System Integration</h2>
+                <p>The end effector had both a camera and a laser to make it easier for the controls team to use. This iteration successfully removed the heavy self-actuating screwdriver to save weight.</p>
+            </div>
+            <div class="image-frame">
+                <img src="effector-p2-rock.jpg">
+                <div class="caption">Spring extension for secure rock clamping</div>
+            </div>
+        </div>
     </div>
-
-    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
+    <footer><a href="project-effector.html">← Back to End Effector Overview</a></footer>
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

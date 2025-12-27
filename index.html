@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Ari Rabinovitz | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
@@ -16,40 +17,45 @@
         </div>
     </section>
 
-    <h2 class="section-title">Projects</h2>
+    <div id="projects" class="section-header reveal"><h2>Selected Projects</h2><div class="line"></div></div>
     <div class="project-grid reveal">
         <a href="project-arm.html" class="grid-item">
-            <img src="home-arm.jpg"><div class="grid-overlay"><h3>Structure of Robotic Manipulator</h3></div>
+            <img src="home-arm.jpg"><div class="grid-overlay"><h3>Robotic Manipulator</h3></div>
         </a>
         <a href="project-effector.html" class="grid-item">
             <img src="home-effector.jpg"><div class="grid-overlay"><h3>End Effector</h3></div>
         </a>
         <a href="project-electrospray.html" class="grid-item">
-            <img src="home-electro.jpg"><div class="grid-overlay"><h3>Electrospray Testing and Manufacturing</h3></div>
+            <img src="home-electro.jpg"><div class="grid-overlay"><h3>Electrospray Research</h3></div>
         </a>
         <a href="project-boom.html" class="grid-item">
-            <img src="home-boom.jpg"><div class="grid-overlay"><h3>Boom Deployment Mechanism</h3></div>
+            <img src="home-boom.jpg"><div class="grid-overlay"><h3>Boom Deployment</h3></div>
         </a>
         <a href="project-soup.html" class="grid-item">
-            <img src="home-soup.jpg"><div class="grid-overlay"><h3>Automatic Soup Stirrer</h3></div>
+            <img src="home-soup.jpg"><div class="grid-overlay"><h3>Consumer Robotics</h3></div>
         </a>
         <a href="project-blade.html" class="grid-item">
             <img src="home-blade.jpg"><div class="grid-overlay"><h3>Airfoil Blade</h3></div>
         </a>
     </div>
 
-    <h2 class="section-title">Personal Interests</h2>
-    <div class="project-grid reveal">
+    <div id="interests" class="section-header reveal"><h2>Interests</h2><div class="line"></div></div>
+    <div class="project-grid reveal" style="border-bottom:none;">
         <div class="grid-item"><img src="tennis.jpg"><div class="grid-overlay"><p>I've played tennis since I was five. Even now, I play multiple times a week.</p></div></div>
         <div class="grid-item"><img src="boardgames.jpg"><div class="grid-overlay"><p>I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</p></div></div>
         <div class="grid-item"><img src="hiking.jpg"><div class="grid-overlay"><p>I love to hike. My favorite place to hike is Acadia National Park in Maine.</p></div></div>
         <div class="grid-item"><img src="travel.jpg"><div class="grid-overlay"><p>Seeing new views that make me feel awestruck is the main reason I like to travel.</p></div></div>
     </div>
 
+    <footer>Contact: abr229@cornell.edu</footer>
+    <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
     <script>
         fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
         function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100){reveals[i].classList.add("active");}}}
         window.addEventListener("scroll",reveal);window.onload=reveal;
+        const btn=document.getElementById("back-to-top");
+        window.onscroll=()=>{if(window.scrollY>400)btn.classList.add("visible");else btn.classList.remove("visible");};
     </script>
 </body>
 </html>

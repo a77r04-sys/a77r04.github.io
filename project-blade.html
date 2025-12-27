@@ -2,25 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Airfoil Blade</title>
+    <title>Airfoil Blade Design</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
+    <div class="project-container">
+        <div class="project-hero reveal"><h1 class="project-title">Airfoil Blade Design</h1></div>
 
-    <div class="container reveal">
-        <h1 class="project-title">Airfoil Blade</h1>
-        <div class="text-block">
-            <p>For my class MAE 4272, we were asked to design an airfoil. The goal was to design an airfoil to operate at a fixed rotation rate, while operating in wind conditions told to us according to a Weibull distribution. We chose to optimize our design for power at our chosen rotation rate of 1000 RPM.</p>
-            <p>Given our Weibull Distribution, we calculated which wind speed to design for, which was determined to be 5.05 m/s. You can see the peak in the following figure:</p>
-            <img src="blade-weibull.jpg" class="media-full">
-            <p>To optimize our power, we designed for a constant angle of attack of about 9.75 degrees. We twisted the pitch angle of the airblade and tapered our chord length. Here is an image of the power we expected to generate:</p>
-            <img src="blade-power-expected.jpg" class="media-full">
-            <p>Our results showed that our airfoils did generate the most power near 1000 RPM; however, the power generation was an order of magnitude less than expected. My work involved developing the code and main design choices. In the future, we want to design our airblade with less assumptions.</p>
-            <p><b>Technologies Used:</b> MATLAB, Autodesk Fusion</p>
+        <div class="split-row reveal">
+            <div class="text-content">
+                <h2>Optimization</h2>
+                <p>Given our Weibull Distribution, we calculated which wind speed to design for, which was determined to be 5.05 m/s. To optimize power, we designed for a constant angle of attack of about 9.75 degrees, twisting the pitch angle to maintain this throughout the blade length.</p>
+                <p><b>Technologies Used:</b> MATLAB, Autodesk Fusion</p>
+            </div>
+            <div class="image-frame">
+                <img src="blade-weibull.jpg">
+                <div class="caption">Weibull Distribution and Wind Speed Analysis</div>
+            </div>
+        </div>
+
+        <div class="split-row reverse reveal">
+            <div class="text-content">
+                <h2>Experimental Results</h2>
+                <p>Our results showed that our airfoils did generate the most power near 1000 RPM; however, the power generation was an order of magnitude less than expected. My work involved developing the code and main design choices in determining geometry.</p>
+            </div>
+            <div class="image-frame">
+                <img src="blade-power-scaled.jpg">
+                <div class="caption">Probabilistically Scaled Power Curves</div>
+            </div>
         </div>
     </div>
-
-    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>
