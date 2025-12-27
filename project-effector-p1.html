@@ -2,34 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First Prototype</title>
+    <title>First Prototype | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="project-container">
-        <div class="project-hero reveal"><h1 class="project-title">End Effector - First Prototype</h1></div>
+    <div class="container reveal">
+        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">End Effector - First Prototype</h1>
+        <div class="skills-container">
+            <span class="skill-chip">Mechanism Design</span><span class="skill-chip">DC Motors</span><span class="skill-chip">3D Printing</span>
+        </div>
 
-        <div class="split-row reveal">
-            <div class="text-content">
-                <h2>Mechanism</h2>
+        <div class="split-block reveal">
+            <div class="txt">
                 <p>The first prototype of the end effector utilized a 4 linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver.</p>
                 <p>Problems encountered with this prototype mostly involved too many points of failure in the 3D prints and too much weight.</p>
             </div>
-            <div class="image-frame">
+            <div class="frame">
                 <img src="effector-p1-full.jpg">
-                <div class="caption">CAD of full-scale end effector</div>
+                <div class="cap">CAD of full-scale end effector</div>
             </div>
         </div>
 
-        <div class="reveal" style="margin-bottom:100px;">
-            <div class="image-frame">
+        <div class="reveal">
+            <div class="frame">
                 <img src="effector-p1-tools.jpg">
-                <div class="caption">Extra tools: Self-actuating screwdriver and motor mounts</div>
+                <div class="cap">CAD of extra tools including self-actuating screwdriver and motor mounts</div>
             </div>
         </div>
     </div>
-    <footer><a href="project-effector.html">← Back to End Effector Overview</a></footer>
+    <footer><a href="project-effector.html" style="color:var(--accent);">← Back to Effector Hub</a></footer>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

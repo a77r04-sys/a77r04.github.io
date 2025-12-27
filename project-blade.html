@@ -7,29 +7,25 @@
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="project-container">
-        <div class="project-hero reveal"><h1 class="project-title">Airfoil Blade Design</h1></div>
-
-        <div class="split-row reveal">
-            <div class="text-content">
-                <p>For my class MAE 4272, we designed an airfoil optimized for power at 1000 RPM. Given our Weibull Distribution, we calculated a design wind speed of 5.05 m/s.</p>
-                <p>To optimize power, we designed for a constant angle of attack of about 9.75 degrees, twisting the pitch angle to maintain efficiency throughout the blade span.</p>
-            </div>
-            <div class="image-frame">
-                <img src="blade-weibull.jpg">
-                <div class="caption">Weibull Distribution and Wind Analysis</div>
-            </div>
+    <div class="container reveal">
+        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Airfoil Blade Design</h1>
+        <div class="skills-container">
+            <span class="skill-chip">MATLAB</span><span class="skill-chip">Autodesk Fusion</span><span class="skill-chip">Aero-Analysis</span>
         </div>
 
-        <div class="split-row reverse reveal">
-            <div class="text-content">
-                <p>Experimental results showed the optimal rotation rate was 1054 RPM. Although the power generation was an order of magnitude less than expected due to modeling assumptions, the curves aligned with our predicted peaks.</p>
-                <p><b>Tools:</b> MATLAB, Autodesk Fusion</p>
+        <div class="split-block reveal">
+            <div class="txt">
+                <p>For MAE 4272, we optimized an airfoil for power at 1000 RPM. We designed for a 9.75-degree angle of attack based on Weibull distribution wind speed calculations.</p>
             </div>
-            <div class="image-frame">
-                <img src="blade-power-scaled.jpg">
-                <div class="caption">Probabilistically Scaled Power Curves</div>
+            <div class="frame"><img src="blade-weibull.jpg"><div class="cap">Weibull wind speed analysis</div></div>
+        </div>
+
+        <div class="split-block reverse reveal">
+            <div class="txt">
+                <h2>Experimental Verification</h2>
+                <p>Wind tunnel testing confirmed an optimal experimental rate of 1054 RPM. My work involved geometry code development and analysis of results.</p>
             </div>
+            <div class="frame"><img src="blade-power-scaled.jpg"><div class="cap">Probabilistically Scaled Power Curves</div></div>
         </div>
     </div>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>

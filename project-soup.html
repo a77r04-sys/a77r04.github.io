@@ -2,36 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Automatic Soup Stirrer</title>
+    <title>Soup Stirrer | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="project-container">
-        <div class="project-hero reveal"><h1 class="project-title">Automatic Soup Stirrer</h1></div>
+    <div class="container reveal">
+        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Automatic Soup Stirrer</h1>
+        <div class="skills-container">
+            <span class="skill-chip">SolidWorks</span><span class="skill-chip">Fusion 360</span><span class="skill-chip">Mechatronics</span><span class="skill-chip">Milling</span>
+        </div>
 
-        <div class="split-row reveal">
-            <div class="text-content">
-                <h2>The Concept</h2>
+        <div class="split-block reveal">
+            <div class="txt">
                 <p>As a part of MAE 2250 (Mechanical Synthesis), I worked on a semester-long group project to build a consumer-ready project. We built an automatic soup stirrer that would stir soup for an individual who does not have the time.</p>
             </div>
-            <div class="image-frame">
+            <div class="frame">
                 <img src="soup-proto.jpg">
-                <div class="caption">Early low-cost physical prototype</div>
+                <div class="cap">Early-stage low-cost functional prototype</div>
             </div>
         </div>
 
-        <div class="split-row reverse reveal">
-            <div class="text-content">
-                <h2>Final Execution</h2>
-                <p>After working through many potential designs as a team, we decided on a final design. I designed and created in CAD the final design almost entirely myself.</p>
+        <div class="split-block reverse reveal">
+            <div class="txt">
+                <h2>Final CAD & Execution</h2>
+                <p>After working through many potential designs as a team and comparing the tests of multiple prototypes, we decided on a final design. I designed and created in CAD the final design, shown here, almost entirely myself.</p>
             </div>
-            <div class="image-frame">
+            <div class="frame">
                 <img src="soup-test.jpg">
-                <div class="caption">Validation: Successfully stirring water in final tests</div>
+                <div class="cap">Final product validation: Successfully stirring water during testing</div>
             </div>
         </div>
     </div>
+    <footer>&copy; 2025 Ari Rabinovitz — abr229@cornell.edu</footer>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

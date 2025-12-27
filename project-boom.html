@@ -2,36 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Boom Deployment</title>
+    <title>Boom Deployment | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="project-container">
-        <div class="project-hero reveal"><h1 class="project-title">Boom Deployment Mechanism</h1></div>
+    <div class="container reveal">
+        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Boom Deployment Mechanism</h1>
+        <div class="skills-container">
+            <span class="skill-chip">Mechanism Design</span><span class="skill-chip">Stepper Motors</span><span class="skill-chip">Prototyping</span><span class="skill-chip">Space Systems</span>
+        </div>
 
-        <div class="split-row reveal">
-            <div class="text-content">
-                <h2>The Mechanism</h2>
-                <p>Working at the Cornell Space Structures Lab, I designed a mechanism to deploy ultra lightweight booms without buckling or blossoming. To do this, I designed two rollers that rotate together with high friction to pull out the boom with constant tension.</p>
+        <div class="split-block reveal">
+            <div class="txt">
+                <p>As a research assistant for Cornell Space Structures Lab, I am working on a boom deployment mechanism that can deploy an ultra lightweight boom from a CubeSat without the boom buckling or blossoming.</p>
+                <p>To do this, I have designed two rollers that rotate together in with high friction to pull out the boom with a constant tension.</p>
             </div>
-            <div class="image-frame">
+            <div class="frame">
                 <img src="boom-coiled.jpg">
-                <div class="caption">Boom fully coiled configuration</div>
+                <div class="cap">Mechanism with boom in fully coiled configuration</div>
             </div>
         </div>
 
-        <div class="split-row reverse reveal">
-            <div class="text-content">
-                <h2>Control</h2>
-                <p>The rollers are coupled together and rotated by one stepper motor, which can be set to start and stop to bend the boom into desired shapes at the exit of the deployment mechanism.</p>
+        <div class="split-block reverse reveal">
+            <div class="txt">
+                <h2>Control & Actuation</h2>
+                <p>The rollers are coupled together and rotated by one stepper motor, which can be set to start and stop to bend the boom into the desired shape at the exit of the deployment mechanism.</p>
             </div>
-            <div class="image-frame">
+            <div class="frame">
                 <img src="boom-deployed.jpg">
-                <div class="caption">Boom fully deployed configuration</div>
+                <div class="cap">Mechanism with boom in fully deployed configuration</div>
             </div>
         </div>
     </div>
+    <footer>&copy; 2025 Ari Rabinovitz — abr229@cornell.edu</footer>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>End Effector Hub</title>
+    <title>End Effector | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="project-container">
-        <div class="project-hero reveal">
-            <h1 class="project-title">End Effector</h1>
-            <p>Designed and built to pick up rocks of complicated geometry, carry 5kg, and perform tasks such as typing and flipping switches.</p>
-        </div>
+    <div class="container reveal">
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px;">End Effector</h1>
+        <p style="margin-bottom: 60px;">As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm to complete several dexterous tasks.</p>
 
-        <div class="split-row reveal">
-            <div class="image-frame">
+        <div class="split-block reveal">
+            <div class="frame">
                 <a href="project-effector-p1.html"><img src="home-effector.jpg"></a>
-                <div class="caption">01. FIRST PROTOTYPE &rarr;</div>
+                <div class="cap">01. FIRST PROTOTYPE &rarr;</div>
             </div>
-            <div class="image-frame">
+            <div class="frame">
                 <a href="project-effector-p2.html"><img src="effector-p2-thumb.jpg"></a>
-                <div class="caption">02. FINAL PROTOTYPE &rarr;</div>
+                <div class="cap">02. FINAL PROTOTYPE &rarr;</div>
             </div>
         </div>
     </div>
+    <footer>&copy; 2025 Ari Rabinovitz — abr229@cornell.edu</footer>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>

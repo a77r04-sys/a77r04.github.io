@@ -8,12 +8,15 @@
 <body>
     <div id="nav-placeholder"></div>
     <div class="container reveal">
-        <h1 class="hero-left" style="font-size: 4rem; margin-bottom: 60px;">Structure of Robotic Manipulator</h1>
+        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Structure of Robotic Manipulator</h1>
+        <div class="skills-container">
+            <span class="skill-chip">SolidWorks CAD</span><span class="skill-chip">ANSYS FEA</span><span class="skill-chip">Milling</span><span class="skill-chip">Integration</span>
+        </div>
 
         <div class="split-block reveal">
             <div class="txt">
-                <p>In my junior year, I designed the structure of the robotic manipulator for the Cornell Mars Rover Project Team. I redesigned the locations of the motors, moving one of the motors to the elbow of the manipulator, in order to reduce the moment created on the base of the robotic manipulator. I took the lead in assembling, wiring, and testing the arm.</p>
-                <p>My Final Design Review presentation can be found at: <a href="https://docs.google.com/presentation/d/1L-skaBkut9bf4dD5_VaHulfrk5CCEFDMjVNFpnK_-dg/edit?usp=sharing" target="_blank" style="color:var(--accent); text-decoration:underline;">FDR Link</a></p>
+                <p>In my junior year, I designed the structure of the robotic manipulator for the Cornell Mars Rover Project Team. I redesigned the locations of the motors, moving one of the motors to the elbow, in order to reduce the moment created on the base of the manipulator.</p>
+                <p>My Final Design Review: <a href="https://docs.google.com/presentation/d/1L-skaBkut9bf4dD5_VaHulfrk5CCEFDMjVNFpnK_-dg/edit?usp=sharing" target="_blank" style="color:var(--accent); text-decoration:underline;">FDR Link</a></p>
             </div>
             <div class="frame">
                 <video controls autoplay muted loop><source src="arm-video-1.mp4"></video>
@@ -23,20 +26,10 @@
 
         <div class="split-block reverse reveal">
             <div class="txt">
-                <h2>Analysis & Optimization</h2>
-                <p>Finite Element Analysis (FEA) was performed on critical joints to ensure the manipulator could sustain a $5$ kg load at full extension without structural failure. This led to a significant reduction in structural weight while maintaining high stiffness.</p>
+                <h2>Structural Validation</h2>
+                <p>Finite Element Analysis (FEA) ensured the manipulator could sustain a 5 kg load at full extension. This led to a significant weight reduction without sacrificing stiffness.</p>
             </div>
-            <div class="frame">
-                <img src="arm-fea.jpg">
-                <div class="cap">FEA of structural joints in the wrist region</div>
-            </div>
-        </div>
-
-        <div class="reveal">
-            <div class="frame">
-                <img src="arm-assembly.jpg">
-                <div class="cap">Full robotic manipulator assembly</div>
-            </div>
+            <div class="frame"><img src="arm-fea.jpg"><div class="cap">ANSYS FEA of wrist structural joints</div></div>
         </div>
     </div>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
