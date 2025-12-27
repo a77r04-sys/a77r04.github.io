@@ -8,24 +8,27 @@
 <body>
     <div id="nav-placeholder"></div>
     <div class="container reveal">
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Airfoil Blade Design</h1>
-        <div class="skills-container">
-            <span class="skill-chip">MATLAB</span><span class="skill-chip">Autodesk Fusion</span><span class="skill-chip">Aero-Analysis</span>
-        </div>
+        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Airfoil Blade</h1>
+        <div class="skills-container"><span class="skill-chip">MATLAB</span><span class="skill-chip">Aero-Analysis</span><span class="skill-chip">Fusion 360</span></div>
 
         <div class="split-block reveal">
             <div class="txt">
-                <p>For MAE 4272, we optimized an airfoil for power at 1000 RPM. We designed for a 9.75-degree angle of attack based on Weibull distribution wind speed calculations.</p>
+                <p>For my class MAE 4272, we were asked to design an airfoil. The goal was to design an airfoil to operate at a fixed rotation rate, while operating in wind conditions told to us according to a Weibull distribution. We chose to optimize our design for power at our chosen rotation rate of 1000 RPM. Given our Weibull Distribution, we calculated which wind speed to design for, which was determined to be 5.05 m/s.</p>
             </div>
-            <div class="frame"><img src="blade-weibull.jpg"><div class="cap">Weibull wind speed analysis</div></div>
+            <div class="frame"><img src="blade-cad.jpg"><div class="cap">Designed Airblade geometry</div></div>
         </div>
 
         <div class="split-block reverse reveal">
             <div class="txt">
-                <h2>Experimental Verification</h2>
-                <p>Wind tunnel testing confirmed an optimal experimental rate of 1054 RPM. My work involved geometry code development and analysis of results.</p>
+                <p>To optimize our power, we designed for a constant angle of attack of about 9.75 degrees. We twisted the pitch angle to maintain this angle of attack and tapered our chord length. We obtaining power curves from 3.4 m/s to 7.1 m/s. Our results showed the most power near 1000 RPM; however, power was an order of magnitude less than expected. My work involved developing the code and main design choices.</p>
+                <p><b>Technologies Used:</b> MATLAB, Autodesk Fusion</p>
             </div>
-            <div class="frame"><img src="blade-power-scaled.jpg"><div class="cap">Probabilistically Scaled Power Curves</div></div>
+            <div class="frame"><img src="blade-weibull.jpg"><div class="cap">Weibull distribution and design wind speed analysis</div></div>
+        </div>
+
+        <div class="bottom-media-grid reveal">
+            <div class="frame"><img src="blade-expected.jpg"><div class="cap">Expected power generation chart</div></div>
+            <div class="frame"><img src="blade-scaled.jpg"><div class="cap">Probabilistically scaled power curves</div></div>
         </div>
     </div>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>

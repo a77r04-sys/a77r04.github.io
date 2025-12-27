@@ -8,48 +8,36 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <section class="hero-split reveal">
+    <section class="hero-split reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 140px 40px;">
         <div class="hero-left"><h1>Ari<br>Rabinovitz</h1></div>
         <div class="hero-right">
-            <p style="color: var(--accent); font-weight: 600; margin-bottom: 10px;">Mechanical & Aerospace Engineering Senior at Cornell University.</p>
-            <p>I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the URC. This past summer, I was a Deployable Technologies Intern at Physical Sciences Inc., designing a rescue litter gripper, testing low-lubricity fluid pumps, and developing a mobile folding bridge. I have performed research for the Cornell ASTRA Lab on electrospray propellants and the Space Structures Lab on boom deployment mechanisms.</p>
+            <p style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 15px;">Mechanical & Aerospace Engineering Senior at Cornell University.</p>
+            <p>Hi! My name is Ari Rabinovitz, and I am a senior at Cornell University studying Mechanical and Aerospace Engineering. I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
+            <p style="margin-top: 20px;">I have taken numerous engineering courses, including <i>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics,</i> and <i>Heat Transfer</i>. This school year, I am excited to take classes related to space, including <i>Intermediate Dynamics</i> and <i>Spacecraft Technology and Systems Architecture</i>.</p>
         </div>
     </section>
 
-    <div id="projects" style="text-align: center; margin: 80px 0 40px;"><h2 style="font-size: 2.5rem;">Selected Works</h2></div>
-    <div class="work-grid reveal">
-        <a href="project-arm.html" class="grid-item">
-            <img src="home-arm.jpg"><div class="grid-overlay"><h3>Robotic Manipulator</h3><p>Design & Assembly</p></div>
-        </a>
-        <a href="project-effector.html" class="grid-item">
-            <img src="home-effector.jpg"><div class="grid-overlay"><h3>End Effector</h3><p>Linear Actuation</p></div>
-        </a>
-        <a href="project-electrospray.html" class="grid-item">
-            <img src="home-electro.jpg"><div class="grid-overlay"><h3>Electrospray Research</h3><p>ASTRA Lab</p></div>
-        </a>
-        <a href="project-boom.html" class="grid-item">
-            <img src="home-boom.jpg"><div class="grid-overlay"><h3>Boom Deployment</h3><p>Space Structures Lab</p></div>
-        </a>
-        <a href="project-soup.html" class="grid-item">
-            <img src="home-soup.jpg"><div class="grid-overlay"><h3>Consumer Robotics</h3><p>MAE 2250</p></div>
-        </a>
-        <a href="project-blade.html" class="grid-item">
-            <img src="home-blade.jpg"><div class="grid-overlay"><h3>Airfoil Design</h3><p>MAE 4272</p></div>
-        </a>
+    <div id="projects" style="text-align: center; margin: 80px 0 40px;"><h2>Technical Portfolio</h2></div>
+    <div class="bottom-media-grid reveal" style="padding: 0 40px;">
+        <a href="project-arm.html" class="action-card"><img src="home-arm.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;"><h3>Robotic Manipulator</h3></a>
+        <a href="project-effector.html" class="action-card"><img src="home-effector.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;"><h3>End Effector Hub</h3></a>
+        <a href="project-electrospray.html" class="action-card"><img src="home-electro.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;"><h3>ASTRA Lab Research</h3></a>
+        <a href="project-boom.html" class="action-card"><img src="home-boom.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;"><h3>Boom Deployment</h3></a>
+        <a href="project-soup.html" class="action-card"><img src="home-soup.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;"><h3>Consumer Robotics</h3></a>
+        <a href="project-blade.html" class="action-card"><img src="home-blade.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;"><h3>Airfoil Design</h3></a>
     </div>
 
-    <div id="interests" style="text-align: center; margin: 80px 0 40px;"><h2 style="font-size: 2.5rem;">Interests</h2></div>
-    <div class="interest-grid reveal">
-        <div class="grid-item"><img src="tennis.jpg"><div class="grid-overlay"><p>Tennis since five; playing weekly.</p></div></div>
-        <div class="grid-item"><img src="boardgames.jpg"><div class="grid-overlay"><p>Weekly chess and strategy games.</p></div></div>
-        <div class="grid-item"><img src="hiking.jpg"><div class="grid-overlay"><p>Hiking Acadia National Park.</p></div></div>
+    <div id="interests" style="text-align: center; margin: 120px 0 40px;"><h2>Interests</h2></div>
+    <div class="interest-grid reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 0 40px; margin-bottom: 100px;">
+        <div class="frame"><img src="tennis.jpg"><div class="cap">I've played tennis since I was five. Even now, I play multiple times a week.</div></div>
+        <div class="frame"><img src="boardgames.jpg"><div class="cap">I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</div></div>
+        <div class="frame"><img src="hiking.jpg"><div class="cap">I love to hike. My favorite place to hike is Acadia National Park in Maine.</div></div>
     </div>
 
     <footer>&copy; 2025 Ari Rabinovitz — abr229@cornell.edu</footer>
-
     <script>
         fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-        function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100){reveals[i].classList.add("active");}}}
+        function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
         window.addEventListener("scroll",reveal);window.onload=reveal;
     </script>
 </body>

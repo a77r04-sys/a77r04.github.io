@@ -10,13 +10,12 @@
     <div class="container reveal">
         <h1 style="font-size: 3.5rem; margin-bottom: 10px;">End Effector - First Prototype</h1>
         <div class="skills-container">
-            <span class="skill-chip">Mechanism Design</span><span class="skill-chip">DC Motors</span><span class="skill-chip">3D Printing</span>
+            <span class="skill-chip">Mechanism Design</span><span class="skill-chip">DC Motors</span><span class="skill-chip">3D Printing</span><span class="skill-chip">Prototyping</span>
         </div>
 
         <div class="split-block reveal">
             <div class="txt">
-                <p>The first prototype of the end effector utilized a 4 linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver.</p>
-                <p>Problems encountered with this prototype mostly involved too many points of failure in the 3D prints and too much weight.</p>
+                <p>The first prototype of the end effector utilized a 4 linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver. Problems encountered with this prototype mostly involved too many points of failure in the 3D prints and too much weight.</p>
             </div>
             <div class="frame">
                 <img src="effector-p1-full.jpg">
@@ -24,14 +23,26 @@
             </div>
         </div>
 
-        <div class="reveal">
+        <div class="bottom-media-grid reveal">
             <div class="frame">
                 <img src="effector-p1-tools.jpg">
-                <div class="cap">CAD of extra tools including self-actuating screwdriver and motor mounts</div>
+                <div class="cap">CAD of extra tools and elements. Includes self actuating screwdriver, camera, laser, and motor mount with room for wires</div>
+            </div>
+            <div class="frame">
+                <img src="effector-p1-cross.jpg">
+                <div class="cap">CAD of cross section</div>
+            </div>
+            <div class="frame">
+                <img src="effector-p1-open.jpg">
+                <div class="cap">Prototype with grippers open</div>
             </div>
         </div>
     </div>
-    <footer><a href="project-effector.html" style="color:var(--accent);">← Back to Effector Hub</a></footer>
-    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
+    <footer>&copy; 2025 Ari Rabinovitz — Cornell University</footer>
+    <script>
+        fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
+        function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
+        window.addEventListener("scroll",reveal);window.onload=reveal;
+    </script>
 </body>
 </html>

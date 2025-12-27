@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>End Effector | Ari Rabinovitz</title>
+    <title>End Effector Hub | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
     <div class="container reveal">
         <h1 style="font-size: 3.5rem; margin-bottom: 20px;">End Effector</h1>
-        <p style="margin-bottom: 60px;">As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm to complete several dexterous tasks.</p>
+        <p style="margin-bottom: 40px; font-size: 1.1rem;">As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm. This arm is used to pick up rocks of complicated geometry, carry up to 5 kg, and complete several dexterous tasks such as typing on a keyboard, screwing in a screw, moving around a joystick, and flipping switches.</p>
 
-        <div class="split-block reveal">
-            <div class="frame">
-                <a href="project-effector-p1.html"><img src="home-effector.jpg"></a>
-                <div class="cap">01. FIRST PROTOTYPE &rarr;</div>
-            </div>
-            <div class="frame">
-                <a href="project-effector-p2.html"><img src="effector-p2-thumb.jpg"></a>
-                <div class="cap">02. FINAL PROTOTYPE &rarr;</div>
-            </div>
+        <div class="bottom-media-grid reveal">
+            <a href="project-effector-p1.html" class="action-card">
+                <img src="home-effector.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;">
+                <h3>01. First Prototype</h3>
+                <p style="color:var(--text-dim); font-size: 0.85rem; margin-top:10px;">4-Linkage & DC Motor Design</p>
+            </a>
+            <a href="project-effector-p2.html" class="action-card">
+                <img src="effector-p2-thumb.jpg" style="width:100%; border-radius:4px; margin-bottom:15px;">
+                <h3>02. Final Prototype</h3>
+                <p style="color:var(--text-dim); font-size: 0.85rem; margin-top:10px;">Linear Actuator & TPU Grip</p>
+            </a>
         </div>
     </div>
-    <footer>&copy; 2025 Ari Rabinovitz — abr229@cornell.edu</footer>
+    <footer>&copy; 2025 Ari Rabinovitz — Cornell University</footer>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
 </body>
 </html>
