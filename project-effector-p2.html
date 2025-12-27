@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>End Effector - Final Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="container reveal">
+        <h1 class="project-title">End Effector - Final Prototype</h1>
+        
+        <div class="text-block">
+            <p>The final prototype of the end effector utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to better clamp onto rocks. Additionally, the end effector employed TPU grippers to better adjust to the rugged edges of rocks. The end effector had both a camera and a laser to make it easier for the controls team to use.</p>
+        </div>
+
+        <img src="effector-p2-cylinder.jpg" class="media-full">
+        <div class="caption">Grabbing onto heavy cylinder</div>
+
+        <img src="effector-p2-rock.jpg" class="media-full">
+        <div class="caption">Grabbing circular rock<br>The springs extended to allow the end effector to clamp the rock more securely</div>
+
+        <img src="effector-p2-laser.jpg" class="media-full">
+        <div class="caption">Laser side</div>
+    </div>
+
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
+</body>
+</html>

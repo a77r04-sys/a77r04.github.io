@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electrospray Testing and Manufacturing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="container reveal">
+        <h1 class="project-title">Electrospray Testing and Manufacturing</h1>
+        
+        <div class="text-block">
+            <p>As a research assistant for ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could indeed last 10 times as long as current technology. The tests were completed by creating electric fields at very high voltages that pulled apart the nanoparticles into their cations and anions, and shot the attractive particles through an aperture in stainless steel plates. By measuring the current that the particles hit a conductive plate through a high voltage sensing circuit, we measured the thrust and specific impulse of these nanoparticles. The testing was completed in a vacuum chamber, so precision was key. That is why I implemented a double goniometer setup, which allowed for rotation of the emitter of the nanoparticles.</p>
+        </div>
+
+        <img src="electro-chamber.jpg" class="media-full">
+        <div class="caption">Electrospray testing structure inside vacuum chamber<br>In this image, the electrospray was aimed at an instrument that can be used for calculating the time of flight</div>
+
+        <img src="electro-circuit.jpg" class="media-full">
+        <div class="caption">High voltage circuit board<br>I soldered the components together, which allows for accurate measurement of current at voltages up to 10kV</div>
+
+        <img src="electro-emitter.jpg" class="media-full">
+        <div class="caption">Electrospray emitter with tungsten needle</div>
+    </div>
+
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
+</body>
+</html>

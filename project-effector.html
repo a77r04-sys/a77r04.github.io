@@ -2,35 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>End Effector</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <nav class="breadcrumb reveal"><a href="index.html">Projects</a> / <span>End Effector</span></nav>
 
-    <div class="project-hero reveal">
-        <h1>End Effector</h1>
-        <p class="intro-text">As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm. This arm is used to pick up rocks of complicated geometry, carry up to 5 kg, and complete several dexterous tasks such as typing on a keyboard, screwing in a screw, moving around a joystick, and flipping switches.</p>
-        <div class="image-container"><video controls><source src="effector-test.mp4" type="video/mp4"></video></div>
+    <div class="container reveal">
+        <h1 class="project-title">End Effector</h1>
+        
+        <p class="intro-text">
+            As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm. This arm is used to pick up rocks of complicated geometry, carry up to 5 kg, and complete several dexterous tasks such as typing on a keyboard, screwing in a screw, moving around a joystick, and flipping switches.
+        </p>
+
+        <div class="text-block">
+            <a href="project-effector-p1.html">
+                <img src="effector-p1-thumb.jpg" class="media-full" style="opacity:0.8; transition:0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">
+            </a>
+            <h2><a href="project-effector-p1.html" style="color:var(--accent);">01 First Prototype &rarr;</a></h2>
+        </div>
+
+        <div class="text-block">
+            <a href="project-effector-p2.html">
+                <img src="effector-p2-thumb.jpg" class="media-full" style="opacity:0.8; transition:0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">
+            </a>
+            <h2><a href="project-effector-p2.html" style="color:var(--accent);">02 Final Prototype &rarr;</a></h2>
+        </div>
     </div>
 
-    <div class="content-block reveal">
-        <h2>01. First Prototype</h2>
-        <p>The first prototype utilized a four-linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver. Unfortunately, the prototype had too much total weight and the 3D prints could not sustain carrying the maximum load of 5kg. This failure led to a complete redesign of the gripping mechanics.</p>
-        <div class="image-container"><img src="gripper-proto1.jpg" alt="Four-Linkage Prototype"></div>
-    </div>
-
-    <div class="content-block reveal">
-        <h2>02. Final Prototype</h2>
-        <p>The final prototype utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to improve its grip of rocks. Additionally, the end effector employed <strong>TPU grippers</strong> to better adjust to the rugged edges of rocks. The end effector had both a camera and a laser to make it easier for the controls team to use.</p>
-        <div class="image-container"><img src="gripper-final.jpg" alt="Final Design"></div>
-    </div>
-
-    <footer><a href="index.html" style="color: var(--accent); font-weight: 600;">&larr; Back to Projects</a></footer>
-    <script>
-        fetch('navbar.html').then(res => res.text()).then(data => { document.getElementById('nav-placeholder').innerHTML = data; });
-        function reveal() { var reveals = document.querySelectorAll(".reveal"); for (var i = 0; i < reveals.length; i++) { if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) { reveals[i].classList.add("active"); } } }
-        window.addEventListener("scroll", reveal); window.onload = reveal;
-    </script>
+    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});window.onload=function(){document.querySelector('.reveal').classList.add('active');};</script>
 </body>
 </html>

@@ -9,43 +9,51 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <section class="hero reveal">
-        <h1>Mechanical & Aerospace <br> <span style="color: var(--accent);">Portfolio</span></h1>
-        <p>Senior at <strong>Cornell University</strong>. Lead of the Cornell Mars Rover Arm Sub-team. Specializing in deployable structures, robotic manipulation, and space systems.</p>
-        <a href="resume.pdf" class="btn" target="_blank">View Resume</a>
+    <section class="hero-split reveal">
+        <div class="hero-left">
+            <h1>Ari<br>Rabinovitz</h1>
+        </div>
+        <div class="hero-right">
+            <p>Hi! My name is Ari Rabinovitz, and I am a senior at Cornell University studying Mechanical and Aerospace Engineering. I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
+            <p>I have taken numerous engineering courses, including <em>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics</em>, and <em>Heat Transfer</em>. This school year, I am excited to take classes related to space, including <em>Intermediate Dynamics</em> and <em>Spacecraft Technology and Systems Architecture</em>.</p>
+        </div>
     </section>
 
-    <div id="projects" class="grid">
-        <a href="project-arm.html" class="card reveal">
-            <img src="arm.jpg" class="card-img" alt="Robotic Arm">
-            <div class="card-body"><h3>Robotic Manipulator Structure</h3><p>Lead engineer for the Cornell Mars Rover 6-DOF arm.</p></div>
+    <h2 style="text-align:center; margin-top:50px;">Projects</h2>
+
+    <div class="project-grid reveal">
+        <a href="project-arm.html" class="grid-item">
+            <img src="home-arm.jpg" alt="Robotic Arm">
+            <div class="grid-overlay"><h3>Structure of Robotic Manipulator</h3></div>
         </a>
-        <a href="project-effector.html" class="card reveal">
-            <img src="gripper.jpg" class="card-img" alt="End Effector">
-            <div class="card-body"><h3>End Effector</h3><p>Custom linear-actuated gripper with TPU components.</p></div>
+        <a href="project-effector.html" class="grid-item">
+            <img src="home-effector.jpg" alt="End Effector">
+            <div class="grid-overlay"><h3>End Effector</h3></div>
         </a>
-        <a href="project-boom.html" class="card reveal">
-            <img src="boom.jpg" class="card-img" alt="Boom Mechanism">
-            <div class="card-body"><h3>Boom Deployment Mechanism</h3><p>Research on ultra-lightweight boom deployment for CubeSats.</p></div>
+        <a href="project-electrospray.html" class="grid-item">
+            <img src="home-electro.jpg" alt="Electrospray">
+            <div class="grid-overlay"><h3>Electrospray Research</h3></div>
         </a>
-        <a href="project-soup.html" class="card reveal">
-            <img src="soup.jpg" class="card-img" alt="Soup Stirrer">
-            <div class="card-body"><h3>Automatic Soup Stirrer</h3><p>MAE 2250 Consumer project designed in Fusion 360.</p></div>
+        <a href="project-boom.html" class="grid-item">
+            <img src="home-boom.jpg" alt="Boom Deployment">
+            <div class="grid-overlay"><h3>Boom Deployment Mechanism</h3></div>
+        </a>
+        <a href="project-soup.html" class="grid-item">
+            <img src="home-soup.jpg" alt="Soup Stirrer">
+            <div class="grid-overlay"><h3>Automatic Soup Stirrer</h3></div>
+        </a>
+        <a href="project-blade.html" class="grid-item">
+            <img src="home-blade.jpg" alt="Blade Design">
+            <div class="grid-overlay"><h3>Airfoil Blade</h3></div>
         </a>
     </div>
 
-    <footer><p>Contact: <a href="mailto:abr229@cornell.edu" style="color: var(--accent);">abr229@cornell.edu</a></p></footer>
+    <footer>Contact: abr229@cornell.edu</footer>
 
     <script>
-        fetch('navbar.html').then(res => res.text()).then(data => { document.getElementById('nav-placeholder').innerHTML = data; });
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                if (reveals[i].getBoundingClientRect().top < windowHeight - 150) { reveals[i].classList.add("active"); }
-            }
-        }
-        window.addEventListener("scroll", reveal); window.onload = reveal;
+        fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
+        function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100){reveals[i].classList.add("active");}}}
+        window.addEventListener("scroll",reveal);window.onload=reveal;
     </script>
 </body>
 </html>
