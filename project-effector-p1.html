@@ -9,15 +9,15 @@
     <div id="nav-placeholder"></div>
     <div class="container reveal">
         <h1>End Effector - First Prototype</h1>
-        <div style="margin: 20px 0 40px;"><span class="skill-chip">DC Motors</span><span class="skill-chip">Mechanism Design</span></div>
+        <div style="margin: 20px 0 40px;"><span class="skill-chip">Milling</span><span class="skill-chip">Mechanical Design</span><span class="skill-chip">DC Motors</span></div>
 
         <p style="margin-bottom: 40px;">The first prototype of the end effector utilized a 4 linkage system and a DC motor. The end effector also had a camera and self-actuating screwdriver. Problems encountered with this prototype mostly involved too many points of failure in the 3D prints and too much weight.</p>
 
         <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="effector-p1-full.jpg"><div class="cap">CAD of full-scale end effector</div></div>
-            <div class="frame"><img src="effector-p1-tools.jpg"><div class="cap">CAD of extra tools (screwdriver, camera, laser)</div></div>
-            <div class="frame"><img src="effector-p1-cross.jpg"><div class="cap">CAD of cross section</div></div>
-            <div class="frame"><img src="effector-p1-open.jpg"><div class="cap">Prototype with grippers open</div></div>
+            <div class="frame"><img src="pictures/effector-p1-full.jpg"><div class="cap">CAD of full-scale end effector</div></div>
+            <div class="frame"><img src="pictures/effector-p1-tools.png"><div class="cap">CAD of extra tools (screwdriver, camera, laser)</div></div>
+            <div class="frame"><img src="pictures/effector-p1-cross.png"><div class="cap">CAD of cross section</div></div>
+            <div class="frame"><img src="pictures/effector-p1.png"><div class="cap">Prototype with grippers open</div></div>
         </div>
     </div>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>

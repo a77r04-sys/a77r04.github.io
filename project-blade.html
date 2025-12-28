@@ -17,21 +17,21 @@
             <div class="txt">
                 <p>For my class MAE 4272, we were asked to design an airfoil. The goal was to design an airfoil to operate at a fixed rotation rate, while operating in wind conditions told to us according to a Weibull distribution. We were asked to design this to learn how to optimize a design, we chose to optimize our design for power at our chosen rotation rate of 1000 RPM. Given our Weibull Distribtion, we calculated which wind speed to design for, which was determined to be 5.05 m/s. You can see the peak in the following figure:</p>
             </div>
-            <div class="frame"><img src="blade-weibull.jpg"><div class="cap">Weibull distribution and design wind speed analysis</div></div>
+            <div class="frame"><img src="pictures/blade-weibull.jpg"><div class="cap">Weibull distribution and design wind speed analysis</div></div>
         </div>
 
         <div class="split-block reverse reveal">
             <div class="txt">
                 <p>To optimize our power, we designed to optimize our Cl/Cd ratio, which meant that we designed for a constant angle of attack of about 9.75 degrees. We twisted the pitch angle of the airblade to maintain this angle of attack. Then, we tapered our chord length to both maximize power within our limiting constraints. Here is a image of the power we expected to generate.</p>
             </div>
-            <div class="frame"><img src="blade-expected.jpg"><div class="cap">Expected power generation chart</div></div>
+            <div class="frame"><img src="pictures/blade-expected.jpg"><div class="cap">Expected power generation chart</div></div>
         </div>
 
         <div class="split-block reveal">
             <div class="txt">
                 <p>We tested the airfoils in a wind tunnel, obtaining power curves for the airfoils from 3.4 m/s to 7.1 m/s, our upper limit of likely wind speeds. Our results showed that our airfoils did generate the most power near 1000 RPM; however, the power generation was an order of magnitude less than expected. The power curves scaled by probability can be seen here:</p>
             </div>
-            <div class="frame"><img src="blade-scaled.jpg"><div class="cap">Probabilistically Scaled Power Curves</div></div>
+            <div class="frame"><img src="pictures/blade-scaled.jpg"><div class="cap">Probabilistically Scaled Power Curves</div></div>
         </div>
 
         <div class="split-block reverse reveal">
@@ -39,7 +39,7 @@
                 <p>My work involved developing the code and main design choices in determining the geometry of the airblade, and also contributing to the analysis of our experimental results, helping show that our optimal rotation rate experimental was 1054 RPM. In the future, we want to design our airblade with less assumptions so that we generate power closer to our expectations.</p>
                 <p><b>Technologies Used:</b> MATLAB, Autodesk Fusion</p>
             </div>
-            <div class="frame"><img src="blade-cad.jpg"><div class="cap">Final blade geometry in Fusion 360</div></div>
+            <div class="frame"><img src="pictures/blade-cad.jpg"><div class="cap">Final blade geometry in Fusion 360</div></div>
         </div>
     </div>
     <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
