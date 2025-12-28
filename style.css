@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
-    --bg-deep: #263D42;      /* Dark Slate Navy from palette */
-    --bg-card: #2D484D;      /* Lighter Navy/Teal for contrast */
-    --teal: #5E9E8F;         /* Teal from palette */
-    --gold: #E3B448;         /* Gold from palette */
-    --peach: #E8A068;        /* Peach from palette */
-    --rust: #D27C5C;         /* Rust/Terracotta from palette */
-    --text-main: #f0f4f5;    /* Off-white for readability */
+    --bg-deep: #263D42;      /* Dark Slate Navy */
+    --bg-card: #2D484D;      /* Lighter Navy/Teal */
+    --teal: #5E9E8F;         /* Teal accent */
+    --gold: #E3B448;         /* Gold accent */
+    --peach: #E8A068;        /* Peach accent */
+    --rust: #D27C5C;         /* Rust/Terracotta accent */
+    --text-main: #f0f4f5;    /* Off-white */
     --nav-height: 80px;
 }
 
@@ -48,8 +48,7 @@ nav a:hover { color: var(--peach); }
 .dropdown-content a { padding: 12px 30px; display: block; font-size: 0.75rem; color: var(--text-main); }
 .dropdown-content a:hover { color: var(--gold); background: rgba(94, 158, 143, 0.2); }
 
-/* --- COMPONENTS --- */
-/* --- UPDATED STATIC SKILLS (TEXT LIST STYLE) --- */
+/* --- SOLID SKILL CHIPS (NON-CLICKABLE) --- */
 .skills-wrapper {
     display: flex;
     align-items: center;
@@ -81,45 +80,36 @@ nav a:hover { color: var(--peach); }
     border: none;                  /* No border as requested */
 }
 
-
+/* --- CLICKABLE ACTION CARDS (LIFT & POP) --- */
 .action-card {
-    background: rgba(45, 72, 77, 0.4); /* Transparent/Hollow look */
-    border: 2px solid var(--teal);    /* Visible border signals "Container" */
-    border-radius: 12px; 
-    padding: 30px; 
-    text-align: center; 
-    cursor: pointer;                  /* Hand cursor */
+    background: var(--bg-card); border: 1.5px solid var(--teal);
+    border-radius: 12px; padding: 30px; text-align: center; 
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: block;
+    cursor: pointer; display: block;
 }
-
-/* HIGH-INTENSITY HOVER FEEDBACK */
 .action-card:hover { 
-    background: var(--bg-card);       /* Becomes solid on hover */
-    border: 5px solid var(--gold);    /* "Pop" effect with thick gold */
-    transform: translateY(-15px);     /* Physical lift */
+    border: 5px solid var(--gold); /* Thick Gold border pop */
+    transform: translateY(-15px); /* Dramatic lift */
     box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
 }
-.action-card img { width: 100%; border-radius: 4px; margin-bottom: 15px; }
+.action-card img { width: 100%; border-radius: 6px; margin-bottom: 20px; transition: 0.3s; }
+.action-card:hover img { transform: scale(1.02); }
 
 /* --- LAYOUTS --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
-.hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1300px; margin: 0 auto; padding: 120px 40px; align-items: start; }
-.hero-left h1 { font-size: clamp(4rem, 8vw, 7rem); line-height: 0.85; color: var(--gold); }
-
-.split-block { display: flex; flex-direction: column; gap: 60px; margin-bottom: 120px; align-items: center; }
+.split-block { display: flex; flex-direction: column; gap: 80px; margin-bottom: 120px; align-items: center; }
 @media (min-width: 900px) { 
-    .split-block { flex-direction: row; gap: 80px; } 
+    .split-block { flex-direction: row; } 
     .split-block.reverse { flex-direction: row-reverse; }
     .split-block > div { flex: 1; }
 }
 
-.frame { background: var(--bg-card); padding: 15px; border: 1px solid var(--teal); border-radius: 4px; }
-.frame img, .frame video { width: 100%; display: block; border-radius: 2px; }
-.cap { margin-top: 15px; font-size: 0.75rem; text-transform: uppercase; color: var(--peach); text-align: center; font-weight: 700; }
+.frame { background: var(--bg-card); padding: 20px; border: 1px solid var(--teal); border-radius: 8px; }
+.frame img, .frame video { width: 100%; display: block; border-radius: 4px; }
+.cap { margin-top: 18px; font-size: 0.75rem; text-transform: uppercase; color: var(--peach); text-align: center; font-weight: 700; }
 
-.bottom-media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px; }
+.bottom-media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; margin-top: 60px; }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
-footer { padding: 80px; text-align: center; border-top: 1px solid var(--teal); color: var(--text-main); font-size: 0.75rem; letter-spacing: 2px; }
+footer { padding: 100px 40px; text-align: center; border-top: 1px solid var(--teal); color: var(--text-main); font-size: 0.75rem; letter-spacing: 2px; }
