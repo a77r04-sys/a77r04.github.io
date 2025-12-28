@@ -101,16 +101,7 @@ nav a:hover { color: var(--peach); }
     transform: translateY(-15px); /* Dramatic lift */
     box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
 }
-/* Target only images inside clickable cards */
-.action-card img {
-    filter: blur(3px) brightness(0.7); /* Idle state: Blurry and slightly dim */
-    transition: filter 0.4s ease, transform 0.4s ease; /* Smooth transition */
-}
 
-/* Remove the blur when the card is hovered */
-.action-card:hover img {
-    filter: blur(0) brightness(1); /* Hover state: Perfectly clear and bright */
-}
 
 /* --- LAYOUTS --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
