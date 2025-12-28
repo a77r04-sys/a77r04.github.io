@@ -49,27 +49,52 @@ nav a:hover { color: var(--peach); }
 .dropdown-content a:hover { color: var(--gold); background: rgba(94, 158, 143, 0.2); }
 
 /* --- COMPONENTS --- */
+/* --- UPDATED STATIC SKILLS (TEXT LIST STYLE) --- */
+.skills-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0; /* Gaps are now handled by margins on the separators */
+    margin: 25px 0 45px;
+    flex-wrap: wrap;
+}
+
 .skills-literal-label {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--peach);
-    cursor: default;
-    user-select: none;
+    color: var(--peach); /* Using the Peach from your palette */
+    margin-right: 20px;
 }
+
 .skill-chip { 
-    display: inline-block; padding: 6px 14px; border: 1.5px solid var(--teal); color: var(--teal);
-    font-size: 0.75rem; border-radius: 4px; text-transform: uppercase; font-weight: 700; margin-right: 10px; margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: var(--teal); /* Using the Teal from your palette */
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Adds the separator bullet between skills, but NOT after the last one */
+.skill-item:not(:last-child):after {
+    content: "•";
+    margin: 0 15px;
+    color: var(--rust); /* Subtle rust color for the separator */
+    font-weight: 400;
 }
 
 .action-card {
-    background: var(--bg-card); border: 2px solid var(--teal);
-    border-radius: 8px; padding: 25px; text-align: center; transition: 0.3s;
-    cursor: pointer; display: block; text-decoration: none;
+    cursor: pointer; /* Feedback: Hand icon */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--teal);
 }
-.action-card:hover { border-color: var(--rust); transform: translateY(-5px); }
+
+.action-card:hover {
+    border: 4px solid var(--gold); /* Large border update */
+    transform: translateY(-12px); /* Physical lift */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4); /* Depth feedback */
+}
 .action-card img { width: 100%; border-radius: 4px; margin-bottom: 15px; }
 
 /* --- LAYOUTS --- */
