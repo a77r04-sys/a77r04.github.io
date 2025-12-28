@@ -83,15 +83,22 @@ nav a:hover { color: var(--peach); }
 
 
 .action-card {
-    cursor: pointer; /* Feedback: Hand icon */
+    background: rgba(45, 72, 77, 0.4); /* Transparent/Hollow look */
+    border: 2px solid var(--teal);    /* Visible border signals "Container" */
+    border-radius: 12px; 
+    padding: 30px; 
+    text-align: center; 
+    cursor: pointer;                  /* Hand cursor */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid var(--teal);
+    display: block;
 }
 
-.action-card:hover {
-    border: 4px solid var(--gold); /* Large border update */
-    transform: translateY(-12px); /* Physical lift */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4); /* Depth feedback */
+/* HIGH-INTENSITY HOVER FEEDBACK */
+.action-card:hover { 
+    background: var(--bg-card);       /* Becomes solid on hover */
+    border: 5px solid var(--gold);    /* "Pop" effect with thick gold */
+    transform: translateY(-15px);     /* Physical lift */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
 }
 .action-card img { width: 100%; border-radius: 4px; margin-bottom: 15px; }
 
