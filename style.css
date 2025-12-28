@@ -105,14 +105,14 @@ nav a:hover { color: var(--peach); }
 .action-card img {
     filter: blur(3px) brightness(0.7); /* Idle state: Blurry and slightly dim */
     transition: filter 0.4s ease, transform 0.4s ease; /* Smooth transition */
+    width: 100%; border-radius: 6px; margin-bottom: 20px; transition: 0.3s;
 }
 
 /* Remove the blur when the card is hovered */
 .action-card:hover img {
     filter: blur(0) brightness(1); /* Hover state: Perfectly clear and bright */
+    transform: scale(1.02);
 }
-.action-card img { width: 100%; border-radius: 6px; margin-bottom: 20px; transition: 0.3s; }
-.action-card:hover img { transform: scale(1.02); }
 
 /* --- LAYOUTS --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
