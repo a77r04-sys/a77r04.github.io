@@ -82,25 +82,53 @@ nav a:hover { color: var(--peach); }
 }
 
 
+/* --- IDLE STATE: CLICKABLE (The 'Elevated' Button) --- */
 .action-card {
-    background: rgba(45, 72, 77, 0.4); /* Transparent/Hollow look */
-    border: 2px solid var(--teal);    /* Visible border signals "Container" */
-    border-radius: 12px; 
+    background: rgba(255, 255, 255, 0.03); /* Ghost background */
+    border: 2px solid var(--rust);        /* Visible Rust border signals action */
+    border-radius: 12px;                  /* Rounded corners signal a button */
     padding: 30px; 
-    text-align: center; 
-    cursor: pointer;                  /* Hand cursor */
+    cursor: pointer;                      /* Hand cursor */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Upward elevation shadow */
 }
 
-/* HIGH-INTENSITY HOVER FEEDBACK */
+/* Hover logic remains only for Action Cards */
 .action-card:hover { 
-    background: var(--bg-card);       /* Becomes solid on hover */
-    border: 5px solid var(--gold);    /* "Pop" effect with thick gold */
-    transform: translateY(-15px);     /* Physical lift */
+    background: var(--bg-card); 
+    border: 5px solid var(--gold); 
+    transform: translateY(-15px); 
     box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
 }
-.action-card img { width: 100%; border-radius: 4px; margin-bottom: 15px; }
+
+/* --- IDLE STATE: STATIC (The 'Museum' Frame) --- */
+.frame { 
+    background: #1e3135;                  /* Darker, recessed background */
+    padding: 20px; 
+    border: 1px solid rgba(94, 158, 143, 0.3); /* Subtle, thin Teal border */
+    border-radius: 4px;                   /* Sharp square corners signal static photo */
+    cursor: default;                      /* Arrow cursor */
+    pointer-events: none;                 /* No hover interaction */
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.5); /* Recessed inward shadow */
+}
+
+.frame img, .frame video { 
+    width: 100%; 
+    display: block; 
+    border-radius: 2px; 
+    filter: brightness(0.9);              /* Slightly dimmed to look static */
+}
+
+.cap { 
+    margin-top: 18px; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    color: var(--teal);                   /* Different caption color than titles */
+    text-align: center; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+}
 
 /* --- LAYOUTS --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
