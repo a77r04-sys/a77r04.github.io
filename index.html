@@ -2,53 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Structure of Robotic Manipulator | Ari Rabinovitz</title>
+    <title>Ari Rabinovitz | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="container reveal">
-        <h1>Structure of Robotic Manipulator</h1>
-        
-        <div class="skills-wrapper">
-            <span class="skills-literal-label">Skills:</span>
-            <span class="skill-chip">SolidWorks</span>
-            <span class="skill-chip">ANSYS FEA</span>
-            <span class="skill-chip">Milling</span>
-            <span class="skill-chip">Systems Integration</span>
-        </div>
 
-        <div class="split-block reveal">
-            <div class="txt">
-                <p>In my junior year, I designed the structure of the robotic manipulator for the Cornell Mars Rover Project Team. I redesigned the locations of the motors, moving one of the motors to the elbow of the manipulator, in order to reduce the moment created on the base of the robotic manipulator. I took the lead in assembling, wiring, and testing the arm. My Final Design Review presentation can be found at: <a href="https://docs.google.com/presentation/d/1L-skaBkut9bf4dD5_VaHulfrk5CCEFDMjVNFpnK_-dg/edit?usp=sharing" target="_blank" style="color:var(--gold); text-decoration:underline;">FDR Link</a>.</p>
-            </div>
-            <div class="frame">
-                <video controls autoplay muted loop><source src="images/arm-video-1.mp4"></video>
-                <div class="cap">Video 1: Detailed joint articulation and movement</div>
-            </div>
+    <section class="hero-split reveal">
+        <div class="hero-left"><h1>Ari<br>Rabinovitz</h1></div>
+        <div class="hero-right">
+            <p style="color: var(--gold); font-weight: 700; font-size: 1.1rem; margin-bottom: 15px;">Mechanical & Aerospace Engineering Senior at Cornell University.</p>
+            <p>Hi! My name is Ari Rabinovitz, and I am a senior at Cornell University, studying Mechanical and Aerospace Engineering. I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition (URC). This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
+            <p style="margin-top: 20px;">I have taken numerous engineering courses, including <i>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics,</i> and <i>Heat Transfer</i>. This school year, I am excited to take classes related to space, including <i>Intermediate Dynamics</i> and <i>Spacecraft Technology and Systems Architecture</i>.</p>
         </div>
+    </section>
 
-        <div class="split-block reverse reveal">
-            <div class="txt">
-                <h2>5kg Cache Testing</h2>
-                <p>I took the lead in assembling and testing the arm to ensure mechanical reliability. This second video demonstrates the critical testing phase where the manipulator successfully picks up the 5 kg cache, validating the structural integrity of the elbow redesign.</p>
-            </div>
-            <div class="frame">
-                <video controls><source src="images/arm-video-2.mp4"></video>
-                <div class="cap">Video 2: 5kg cache pickup test</div>
-            </div>
+    <div id="projects" style="text-align: center; margin: 80px 0 40px;"><h2>Projects</h2></div>
+    
+    <div class="bottom-media-grid reveal" style="padding: 0 40px;">
+        <a href="project-arm.html" class="action-card">
+            <img src="pictures/arm-full.png">
+            <h3>Robotic Manipulator</h3>
+        </a>
+        <a href="project-effector.html" class="action-card">
+            <img src="pictures/effector-p2-final.png">
+            <h3>End Effector</h3>
+        </a>
+        <a href="project-electrospray.html" class="action-card">
+            <img src="pictures/electro-chamber.jpeg">
+            <h3>Electrospray Research</h3>
+        </a>
+        <a href="project-boom.html" class="action-card">
+            <img src="pictures/boom-deployed.png">
+            <h3>Boom Deployment</h3>
+        </a>
+        <a href="project-soup.html" class="action-card">
+            <img src="pictures/soup-render.png">
+            <h3>Automatic Soup Stirrer</h3>
+        </a>
+        <a href="project-blade.html" class="action-card">
+            <img src="pictures/blade-cad.png">
+            <h3>Airfoil Blade</h3>
+        </a>
+    </div>
+
+    <div id="interests" style="text-align: center; margin: 120px 0 40px;"><h2>Personal Interests</h2></div>
+    
+    <div class="bottom-media-grid reveal" style="padding: 0 40px; margin-bottom: 100px;">
+        <div class="frame">
+            <img src="pictures/interests-tennis.png">
+            <div class="cap">I've played tennis since I was five. Even now, I play multiple times a week.</div>
         </div>
-
-        <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="images/arm-elbow.jpg"><div class="cap">Elbow area of manipulator</div></div>
-            <div class="frame"><img src="images/arm-wrist.jpg"><div class="cap">Wrist area of manipulator</div></div>
-            <div class="frame"><img src="images/arm-fea.jpg"><div class="cap">FEA of one of the structural joints in the wrist region</div></div>
-            <div class="frame"><img src="images/arm-full.jpg"><div class="cap">Full robotic manipulator assembly</div></div>
+        <div class="frame">
+            <img src="pictures/interests-boardgame.png">
+            <div class="cap">I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</div>
+        </div>
+        <div class="frame">
+            <img src="pictures/interests-hiking.png">
+            <div class="cap">I love to hike. My favorite places to hike have been in Iceland and the Great Smoky Mountains.</div>
         </div>
     </div>
-    
-    <footer>&copy; 2025 Ari Rabinovitz — Cornell University</footer>
 
+    <footer>&copy; 2025 Ari Rabinovitz — Cornell University</footer>
+    
     <script>
         fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
         function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
