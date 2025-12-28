@@ -14,8 +14,13 @@
                 <span class="skills-literal-label">Skills:</span>
                 <span class="skill-chip">MATLAB</span><span class="skill-chip">Autodesk Fusion</span>
             </div>
-            </div>
-        <div class="frame"><img src="pictures/blade-cad.png"><div class="cap">Final blade geometry in Fusion 360</div></div>
+        </div>
+
+        <div class="frame" style="width: 80%; margin: 0 auto 40px;">
+            <img src="pictures/blade-cad.png" style="width: 100%; height: auto; display: block;">
+            <div class="cap">Final blade geometry in Fusion 360</div>
+        </div>
+
         <div class="split-block reveal">
             <div class="txt">
                 <p>For my class MAE 4272 Heat Transfer and Fluids Laboratory, we were asked to design an airfoil. The goal was to design an airfoil to operate at a fixed rotation rate, while operating in wind conditions told to us according to a Weibull distribution. We were asked to design this to learn how to optimize a design; I chose to optimize our design for power at our chosen rotation rate of 1000 RPM. Given our Weibull Distribution, I calculated which wind speed to design for, which was determined to be 5.05 m/s. You can see the peak in the following figure:</p>
@@ -34,10 +39,22 @@
             <div class="txt">
                 <p>We tested the airfoils in a wind tunnel, obtaining power curves for the airfoils from 3.4 m/s to 7.1 m/s, our upper limit of likely wind speeds. Our results showed that our airfoils did generate the most power near 1000 RPM; however, the power generation was an order of magnitude less than expected. The power curves scaled by probability can be seen here:</p>
             </div>
-            <div class="frame"><img src="pictures/blade-power.png"><div class="cap">Experimental power curves</div></div>
-            <div class="frame"><img src="pictures/blade-scaled.png"><div class="cap">Power curves Scaled by Weibull distribution probability</div></div>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="frame"><img src="pictures/blade-power.png"><div class="cap">Experimental power curves</div></div>
+                <div class="frame"><img src="pictures/blade-scaled.png"><div class="cap">Power curves Scaled by Weibull distribution probability</div></div>
+            </div>
         </div>
     </div>
-    <script>fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}window.addEventListener("scroll",reveal);window.onload=reveal;</script>
+    
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
+        fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
+        
+        function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
+        window.addEventListener("scroll",reveal);window.onload=reveal;
+    </script>
 </body>
 </html>
