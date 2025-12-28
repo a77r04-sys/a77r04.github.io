@@ -47,7 +47,16 @@ nav a:hover { color: var(--peach); }
 .dropdown:hover .dropdown-content { display: block; }
 .dropdown-content a { padding: 12px 30px; display: block; font-size: 0.75rem; color: var(--text-main); }
 .dropdown-content a:hover { color: var(--gold); background: rgba(94, 158, 143, 0.2); }
-
+.hero-split { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 140px 40px; 
+    align-items: start; 
+}
+.hero-left h1 { font-size: clamp(4rem, 8vw, 7rem); line-height: 0.85; }
 /* --- SOLID SKILL CHIPS (NON-CLICKABLE) --- */
 .skills-wrapper {
     display: flex;
