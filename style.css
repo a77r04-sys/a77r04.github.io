@@ -103,7 +103,7 @@ nav a:hover { color: var(--peach); }
 }
 /* Target only images inside clickable cards */
 .action-card img {
-    filter: blur(3px) brightness(0.7); /* Idle state: Blurry and slightly dim */
+    filter: blur(2px) brightness(0.75); /* Idle state: Blurry and slightly dim */
     transition: filter 0.4s ease, transform 0.4s ease; /* Smooth transition */
     width: 100%; border-radius: 6px; margin-bottom: 20px; transition: 0.3s;
 }
@@ -131,4 +131,50 @@ nav a:hover { color: var(--peach); }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
-footer { padding: 100px 40px; text-align: center; border-top: 1px solid var(--teal); color: var(--text-main); font-size: 0.75rem; letter-spacing: 2px; }
+/* --- FOOTER CONTENT STYLING --- */
+footer {
+    padding: 60px 40px;
+    text-align: center;
+    border-top: 1px solid var(--teal);
+    background-color: var(--bg-deep);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-email {
+    color: var(--gold);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.linkedin-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--rust);
+    border: 2px solid var(--rust);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.linkedin-btn:hover {
+    background-color: var(--rust);
+    color: var(--text-main);
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
