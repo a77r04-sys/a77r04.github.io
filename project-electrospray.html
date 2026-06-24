@@ -2,45 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Electrospray Research | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="container reveal">
-        <h1>Electrospray Testing and Manufacturing</h1>
-        <div style="margin: 20px 0 40px;">
-            <div class="skills-wrapper">
-                <span class="skills-literal-label">Skills:</span>
-                <span class="skill-chip">Analysis</span><span class="skill-chip">CAD</span><span class="skill-chip">Soldering</span><span class="skill-chip">LabVIEW</span>
-            </div>
-            </div>
 
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <span class="current">Electrospray Research</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Propulsion Research</span>
+            <span class="tag-pill year">Cornell ASTRA Lab</span>
+        </div>
+        <h1 class="project-title">Electrospray Testing &amp; Manufacturing</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">Analysis</span>
+            <span class="skill-chip">CAD</span>
+            <span class="skill-chip">Soldering</span>
+            <span class="skill-chip">LabVIEW</span>
+        </div>
+    </section>
+
+    <div class="container reveal">
         <div class="split-block reveal">
             <div class="txt">
-                <p>As a research assistant for ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could indeed last 10 times as long as current technology. The tests were completed by creating electric fields at very high voltages that pulled apart the nanoparticles into their cations and anions, and shot the attractive particles through an aperture in stainless steel plates. By measuring the current that the particles hit a conductive plate through a high voltage sensing circuit, we measured the thrust and specific impulse of these nanoparticles. The testing was completed in a vacuum chamber, so precision was key. That is why I implemented a double goniometer setup, which allowed for rotation of the emitter of the nanoparticles.</p>
+                <p class="lede">As a research assistant for the Cornell ASTRA Lab, I tested and analyzed novel nanoparticle fluids in electrospray experiments to determine whether the propellants could last 10&times; longer than current technology.</p>
+                <p style="margin-top:18px;">Tests were performed by generating electric fields at very high voltages, splitting nanoparticles into cations and anions and accelerating the attracted particles through an aperture in stainless steel plates. Thrust and specific impulse were measured via a conductive collector plate and a high-voltage sensing circuit. Testing took place in a vacuum chamber, so precision was critical — I implemented a double-goniometer setup allowing fine rotation of the nanoparticle emitter.</p>
             </div>
-            <div class="frame"><img src="pictures/electro-chamber.jpeg"><div class="cap">Electrospray testing structure inside vacuum chamber</div></div>
+            <div class="frame"><img src="pictures/electro-chamber.jpeg" alt="Vacuum chamber"><div class="cap">Electrospray testing structure inside vacuum chamber</div></div>
         </div>
 
-        <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="pictures/electro-circuit.png"><div class="cap">High voltage circuit board (up to 10kV) that I soldered</div></div>
-            <div class="frame"><img src="pictures/electro-emitter.png"><div class="cap">Electrospray emitter with tungsten needle</div></div>
-            <div class="frame"><img src="pictures/electro-detail.png"><div class="cap">Emitter assembly detail</div></div>
+        <div class="bottom-media-grid reveal" style="padding:0; max-width:none;">
+            <div class="frame"><img src="pictures/electro-circuit.png" alt="HV circuit"><div class="cap">High-voltage circuit board (up to 10&nbsp;kV) that I soldered</div></div>
+            <div class="frame"><img src="pictures/electro-emitter.png" alt="Emitter"><div class="cap">Electrospray emitter with tungsten needle</div></div>
+            <div class="frame"><img src="pictures/electro-detail.png" alt="Emitter detail"><div class="cap">Emitter assembly detail</div></div>
         </div>
     </div>
+
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -2,47 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Boom Deployment | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="container reveal">
-        <h1>Boom Deployment Mechanism</h1>
-        <div style="margin: 20px 0 40px;">
-            <div class="skills-wrapper">
-            <span class="skills-literal-label">Skills:</span>
-            <span class="skill-chip">Mechanical Design</span><span class="skill-chip">Stepper Motors</span><span class="skill-chip">Space Systems</span>
-            </div>    
-        </div>
 
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <span class="current">Boom Deployment</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Space Structures</span>
+            <span class="tag-pill year">Cornell Space Structures Lab</span>
+        </div>
+        <h1 class="project-title">Boom Deployment Mechanism</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">Mechanical Design</span>
+            <span class="skill-chip">Stepper Motors</span>
+            <span class="skill-chip">Space Systems</span>
+        </div>
+    </section>
+
+    <div class="container reveal">
         <div class="split-block reveal">
             <div class="txt">
-                <p>As a research assistant for Cornell Space Structures Lab, I am working on a boom deployment mechanism that can deploy an ultra lightweight boom from a CubeSat without the boom buckling or blossoming. To do this, I have designed two rollers that rotate together with high friction to pull out the boom with a constant tension. The rollers are coupled together, rotated by one stepper motor, which can be set to start and stop to bend the boom into the desired shape at the exit of the deployment mechanism.</p>
+                <p class="lede">As a research assistant for the Cornell Space Structures Lab, I am developing a deployment mechanism that releases an ultra-lightweight boom from a CubeSat without buckling or blossoming.</p>
+                <p style="margin-top:18px;">My design uses two high-friction rollers coupled together and driven by a single stepper motor — pulling the boom out under constant tension. By modulating start/stop of the stepper, the boom can be bent into the desired shape as it exits the housing.</p>
             </div>
-            <div class="frame"><img src="pictures/boom-coiled.png"><div class="cap">Boom fully coiled configuration</div></div>
+            <div class="frame"><img src="pictures/boom-coiled.png" alt="Coiled boom"><div class="cap">Boom fully coiled configuration</div></div>
         </div>
 
-        <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="pictures/boom-deployed.png"><div class="cap">Boom fully deployed</div></div>
+        <div class="bottom-media-grid reveal" style="padding:0; max-width:none;">
+            <div class="frame"><img src="pictures/boom-deployed.png" alt="Deployed boom"><div class="cap">Boom fully deployed</div></div>
             <div class="frame">
-                <video controls><source src="pictures/boom-test.mp4"></video>
-                <div class="cap">Video: Successful deployment testing</div>
+                <video controls playsinline><source src="pictures/boom-test.mp4"></video>
+                <div class="cap">Video &mdash; successful deployment testing</div>
             </div>
         </div>
     </div>
+
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>

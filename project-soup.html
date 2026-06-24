@@ -2,54 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Soup Stirrer | Ari Rabinovitz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Automatic Soup Stirrer | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body><div id="nav-placeholder"></div>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <span class="current">Automatic Soup Stirrer</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Consumer Product</span>
+            <span class="tag-pill year">MAE 2250 &mdash; Mechanical Synthesis</span>
+        </div>
+        <h1 class="project-title">Automatic Soup Stirrer</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">CAD</span>
+            <span class="skill-chip">Prototyping</span>
+        </div>
+    </section>
 
     <div class="container reveal">
-        <h1>Automatic Soup Stirrer</h1>
-        
-        <div style="margin: 20px 0 20px;"> <div class="skills-wrapper">
-                <span class="skills-literal-label">Skills:</span>
-                <span class="skill-chip">CAD</span><span class="skill-chip">Prototyping</span>
-            </div>
-        </div>
-    
-        <div class="split-block">
+        <div class="split-block reveal">
             <div class="txt">
-                <p>As a part of MAE 2250 (Mechanical Synthesis), I worked on a semester-long group project to build a consumer-ready project. We built an automatic soup stirrer that would stir soup for an individual who does not have the time. After working through many potential designs as a team and comparing the tests of multiple prototypes, we decided on a final design. I designed and created in CAD the final design, shown here, almost entirely myself.</p>
+                <p class="lede">For MAE 2250 (Mechanical Synthesis), my team built a consumer-ready automatic soup stirrer — designed for people who don't have time to stand over the pot.</p>
+                <p style="margin-top:18px;">After iterating through multiple design concepts and head-to-head prototype tests, we converged on a final architecture. I designed and CAD'd nearly the entirety of the final form factor shown here.</p>
             </div>
             <div class="frame">
-                <img src="pictures/soup-render.png">
+                <img src="pictures/soup-render.png" alt="Final render">
                 <div class="cap">Final design render</div>
             </div>
         </div>
-    
-        <div class="bottom-media-grid" style="display: flex; gap: 20px; margin-top: 20px;">
+
+        <div class="bottom-media-grid reveal" style="padding:0; max-width:none;">
             <div class="frame">
-                <img src="pictures/soup-proto.png" style="width: 100%; height: auto; display: block;">
+                <img src="pictures/soup-proto.png" alt="Low-cost prototype">
                 <div class="cap">Early low-cost physical prototype</div>
             </div>
             <div class="frame">
-                <img src="pictures/soup-test.png" style="width: 100%; height: auto; display: block;">
+                <img src="pictures/soup-test.png" alt="Stirring test">
                 <div class="cap">Test of final product stirring water</div>
             </div>
         </div>
     </div>
-    
+
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>

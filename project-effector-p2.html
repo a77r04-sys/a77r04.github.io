@@ -2,40 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Final Prototype | Ari Rabinovitz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>End Effector — Final Prototype | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="container reveal">
-        <h1>End Effector - Final Prototype</h1>
-        <div style="margin: 20px 0 40px;">
-            <div class="skills-wrapper">
-                <span class="skills-literal-label">Skills:</span>
-                <span class="skill-chip">Autodesk Inventor</span><span class="skill-chip">3D Printing</span></div>
-            </div>
-        <p style="margin-bottom: 40px;">The final prototype of the end effector utilized a linear actuator and springs to create a gripping mechanism that could bend in more, allowing the end effector to better clamp onto rocks. Additionally, the end effector employed TPU grippers to better adjust to the rugged edges of rocks. The end effector had both a camera and a laser to make it easier for the controls team to use. This end effector no longer had the self-actuating screwdriver.</p>
 
-        <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="pictures/effector-p2-final.png"><div class="cap">End effector mounted on arm</div></div>
-            <div class="frame"><img src="pictures/effector-p2-cylinder.png"><div class="cap">Testing: Grabbing onto a heavy metal cylinder</div></div>
-            <div class="frame"><img src="pictures/effector-p2-rock.png"><div class="cap">Grabbing circular rock; springs extended for secure clamping</div></div>
-            <div class="frame"><img src="pictures/effector-p2-camera.png"><div class="cap">Camera side detail</div></div>
-            <div class="frame"><img src="pictures/effector-p2-cad.png"><div class="cap">CAD of design</div></div>
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <a href="project-effector.html">End Effector</a><span class="sep">/</span>
+            <span class="current">Final Prototype</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Mechanical Design</span>
+            <span class="tag-pill year">Iteration 02</span>
+        </div>
+        <h1 class="project-title">Final Prototype</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">Autodesk Inventor</span>
+            <span class="skill-chip">3D Printing</span>
+        </div>
+        <p class="lede" style="margin-top: 24px;">The final prototype uses a linear actuator and springs to drive a gripping mechanism that flexes farther inward — clamping more securely on rocks. TPU pads conform to rugged edges. A camera and laser assist the controls team. The self-actuating screwdriver was removed in this iteration to focus on grip reliability.</p>
+    </section>
+
+    <div class="container reveal">
+        <div class="bottom-media-grid reveal" style="padding:0; max-width:none;">
+            <div class="frame"><img src="pictures/effector-p2-final.png" alt="Final on arm"><div class="cap">End effector mounted on arm</div></div>
+            <div class="frame"><img src="pictures/effector-p2-cylinder.png" alt="Cylinder test"><div class="cap">Test &mdash; grabbing onto a heavy metal cylinder</div></div>
+            <div class="frame"><img src="pictures/effector-p2-rock.png" alt="Rock grab"><div class="cap">Grabbing a circular rock; springs extended for secure clamping</div></div>
+            <div class="frame"><img src="pictures/effector-p2-camera.png" alt="Camera side"><div class="cap">Camera side detail</div></div>
+            <div class="frame"><img src="pictures/effector-p2-cad.png" alt="CAD"><div class="cap">CAD of design</div></div>
         </div>
     </div>
+
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>

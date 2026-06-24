@@ -2,54 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ari Rabinovitz | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ari Rabinovitz | Mechanical Engineer</title>
+    <meta name="description" content="Portfolio of Ari Rabinovitz — Mechanical Engineering graduate of Cornell University (Summa Cum Laude), currently a Structural Mechanics and Concepts Intern at NASA Langley Research Center. Robotics, space structures, and electrospray propulsion.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
 
-    <section class="hero-split reveal">
+    <!-- HERO -->
+    <section class="hero-split">
         <div class="hero-left">
-            <h1>Ari<br>Rabinovitz</h1>
+            <div class="hero-eyebrow">
+                <span class="dot"></span>
+                <span>Portfolio</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-word w1">Ari</span><br>
+                <span class="hero-word w2 accent">Rabinovitz</span>
+            </h1>
+            <div class="hero-sub">
+                Mechanical and Aerospace Engineer
+            </div>
         </div>
         <div class="hero-right">
-            <p style="color: var(--gold); font-weight: 700; font-size: 1.1rem; margin-bottom: 15px;">Mechanical & Aerospace Engineering Senior at Cornell University</p>
-            <p>Hi! My name is Ari Rabinovitz, and I am a senior at Cornell University, studying Mechanical and Aerospace Engineering. I am the lead of the arm sub-team of the Cornell Mars Rover project team, working to build a rover to compete in the University Rover Competition. This past summer, I was employed as a Deployable Technologies Intern at Physical Sciences Inc., designing a gripper that enables rescue litters to be carried for long distances, testing a pump designed to handle low-lubricity fluids, and assisting in the development of a lightweight mobile folding bridge. I have also performed research for the Cornell ASTRA (Advanced Space Technology Research and Architecture) Lab, working on novel propellants for electrospray technologies. Since my sophomore year, I have been working as a research assistant at Cornell Space Structures Lab, assisting in the design of a boom deployment mechanism for ultra lightweight booms.</p>
-            <p style="margin-top: 20px;">I have taken numerous engineering courses, including <i>Dynamics, Introduction to Fluids, Mechanics of Materials, Mechatronics,</i> and <i>Heat Transfer</i>. This school year, I am excited to take classes related to space, including <i>Intermediate Dynamics</i> and <i>Spacecraft Technology and Systems Architecture.</i></p>
+            <p class="hero-role">About</p>
+            <p>This past spring, I graduated <em>summa cum laude</em> from <strong>Cornell University</strong> with a degree in mechanical engineering. This summer, I am a <strong>Structural Mechanics and Concepts Intern</strong> at <strong>NASA Langley Research Center</strong>.</p>
+            <p>At Cornell, I led the arm sub-team of the <strong>Cornell Mars Rover</strong> project, building a manipulator for the University Rover Competition. The summer before, as a Deployable Technologies Intern at <strong>Physical Sciences Inc.</strong>, I designed a gripper enabling long-distance carry of rescue litters, tested a low-lubricity fluid pump, and contributed to a lightweight mobile folding bridge.</p>
+            <p>I also worked with the <strong>Cornell ASTRA Lab</strong> on novel propellants for electrospray thrusters, and from my sophomore year on, was a research assistant at the <strong>Cornell Space Structures Lab</strong> designing a boom-deployment mechanism for ultra-lightweight booms.</p>
+            <p>Coursework included <i>Dynamics, Fluids, Mechanics of Materials, Mechatronics, Heat Transfer, Intermediate Dynamics,</i> and <i>Spacecraft Technology and Systems Architecture.</i></p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View projects <span class="arrow">→</span></a>
+                <a href="resume.pdf" target="_blank" rel="noopener" class="btn-ghost">Resume</a>
+            </div>
         </div>
     </section>
 
-    <div id="projects" style="text-align: center; margin: 1px 0 40px;"><h2>Projects</h2></div>
-    
-    <div class="bottom-media-grid reveal" style="padding: 0 40px;">
-        <a href="project-arm.html" class="action-card"><img src="pictures/arm-full.png"><h3>Robotic Manipulator</h3></a>
-        <a href="project-effector.html" class="action-card"><img src="pictures/effector-p2-final.png"><h3>End Effector</h3></a>
-        <a href="project-electrospray.html" class="action-card"><img src="pictures/electro-chamber.jpeg"><h3>Electrospray Research</h3></a>
-        <a href="project-boom.html" class="action-card"><img src="pictures/boom-deployed.png"><h3>Boom Deployment</h3></a>
-        <a href="project-soup.html" class="action-card"><img src="pictures/soup-render.png"><h3>Automatic Soup Stirrer</h3></a>
-        <a href="project-blade.html" class="action-card"><img src="pictures/blade-cad.png"><h3>Airfoil Blade Design</h3></a>
+    <!-- STATS STRIP -->
+    <div class="stats-strip reveal">
+        <div class="stat">
+            <span class="stat-num">Mechanical Engineering</span>
+            <span class="stat-lbl">Cornell University</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">Arm Sub-team Lead</span>
+            <span class="stat-lbl">Cornell Mars Rover</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">Deployable Technologies Intern</span>
+            <span class="stat-lbl">Physical Sciences Inc.</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">Structural Mechanics &amp; Concepts Intern</span>
+            <span class="stat-lbl">NASA Langley Research Center</span>
+        </div>
     </div>
 
-    <div id="interests" style="text-align: center; margin: 120px 0 40px;"><h2>Personal Interests</h2></div>
-    
-    <div class="bottom-media-grid reveal" style="padding: 0 40px; margin-bottom: 100px;">
-        <div class="frame"><img src="pictures/interests-tennis.png"><div class="cap">I've played tennis since I was five. Even now, I play multiple times a week.</div></div>
-        <div class="frame"><img src="pictures/interests-boardgame.png"><div class="cap">I try to play board games at least once a week, whether it's chess, Monopoly, or Settlers of Catan.</div></div>
-        <div class="frame"><img src="pictures/interests-hiking.png"><div class="cap">I love to hike. My favorite places to hike have been in Iceland and the Great Smoky Mountains.</div></div>
+    <!-- MARQUEE -->
+    <div class="marquee reveal" aria-hidden="true">
+        <div class="marquee-track">
+            <span class="m-item">CAD</span>
+            <span class="m-item">SolidWorks</span>
+            <span class="m-item">Autodesk Inventor</span>
+            <span class="m-item">Fusion 360</span>
+            <span class="m-item">Creo</span>
+            <span class="m-item">ANSYS FEA</span>
+            <span class="m-item">MATLAB</span>
+            <span class="m-item">LabVIEW</span>
+            <span class="m-item">3D Printing</span>
+            <span class="m-item">Machining</span>
+            <span class="m-item">Soldering</span>
+            <span class="m-item">DFMA</span>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="projects" class="section-head reveal">
+        <div class="section-eyebrow">Selected work</div>
+        <h2><span class="num">01 /</span> Projects &amp; <em>Research</em></h2>
+    </div>
+
+    <div class="bottom-media-grid reveal">
+        <a href="project-arm.html" class="action-card">
+            <div class="img-wrap"><img src="pictures/arm-full.png" alt="Robotic manipulator full assembly"></div>
+            <div class="card-meta"><span class="num">01</span><span class="sep"></span><span>Robotics</span></div>
+            <h3>Robotic Manipulator</h3>
+            <p class="card-desc">6-DOF arm structure for the Cornell Mars Rover — redesigned the elbow joint to relocate motors and reduce base moment.</p>
+        </a>
+        <a href="project-effector.html" class="action-card">
+            <div class="img-wrap"><img src="pictures/effector-p2-final.png" alt="End effector mounted on arm"></div>
+            <div class="card-meta"><span class="num">02</span><span class="sep"></span><span>Mechanical Design</span></div>
+            <h3>End Effector</h3>
+            <p class="card-desc">Two-prototype gripper sequence with linear-actuated springs and TPU pads for dexterous rock pickup and 5&nbsp;kg cache carry.</p>
+        </a>
+        <a href="project-electrospray.html" class="action-card">
+            <div class="img-wrap"><img src="pictures/electro-chamber.jpeg" alt="Electrospray testing chamber"></div>
+            <div class="card-meta"><span class="num">03</span><span class="sep"></span><span>Propulsion Research</span></div>
+            <h3>Electrospray Research</h3>
+            <p class="card-desc">Vacuum-chamber characterization of nanoparticle propellants for next-generation low-thrust electrospray emitters at Cornell ASTRA Lab.</p>
+        </a>
+        <a href="project-boom.html" class="action-card">
+            <div class="img-wrap"><img src="pictures/boom-deployed.png" alt="Deployed boom"></div>
+            <div class="card-meta"><span class="num">04</span><span class="sep"></span><span>Space Structures</span></div>
+            <h3>Boom Deployment</h3>
+            <p class="card-desc">Coupled-roller deployment mechanism for ultra-lightweight CubeSat booms — constant-tension pull without buckling or blossoming.</p>
+        </a>
+        <a href="project-soup.html" class="action-card">
+            <div class="img-wrap"><img src="pictures/soup-render.png" alt="Soup stirrer render"></div>
+            <div class="card-meta"><span class="num">05</span><span class="sep"></span><span>Consumer Product</span></div>
+            <h3>Automatic Soup Stirrer</h3>
+            <p class="card-desc">MAE&nbsp;2250 Mechanical Synthesis semester project — full CAD-to-prototype of a hands-free kitchen stirring appliance.</p>
+        </a>
+        <a href="project-blade.html" class="action-card">
+            <div class="img-wrap"><img src="pictures/blade-cad.png" alt="Airfoil blade CAD"></div>
+            <div class="card-meta"><span class="num">06</span><span class="sep"></span><span>Aerodynamics</span></div>
+            <h3>Airfoil Blade Design</h3>
+            <p class="card-desc">Wind-tunnel-validated airfoil tuned to a Weibull-distributed wind profile, optimized for power at 1000&nbsp;RPM.</p>
+        </a>
+    </div>
+
+    <!-- INTERESTS -->
+    <div id="interests" class="section-head reveal">
+        <div class="section-eyebrow">Off the clock</div>
+        <h2><span class="num">02 /</span> Personal <em>Interests</em></h2>
+    </div>
+
+    <div class="bottom-media-grid reveal" style="margin-bottom: 40px;">
+        <div class="frame">
+            <img src="pictures/interests-tennis.png" alt="Tennis">
+            <div class="cap">Tennis — multiple times a week, since I was five</div>
+        </div>
+        <div class="frame">
+            <img src="pictures/interests-boardgame.png" alt="Board games">
+            <div class="cap">Board games — chess, Monopoly, Catan — at least weekly</div>
+        </div>
+        <div class="frame">
+            <img src="pictures/interests-hiking.png" alt="Hiking">
+            <div class="cap">Hiking — favorites: Iceland and the Great Smoky Mountains</div>
+        </div>
     </div>
 
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -2,60 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arm Structure | Ari Rabinovitz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robotic Manipulator | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="container reveal">
-        <h1>Arm Structure</h1>
-        <div style="margin: 20px 0 40px;">
-            <div class="skills-wrapper">
-            <span class="skills-literal-label">Skills:</span>
-            <span class="skill-chip">CAD</span><span class="skill-chip">ANSYS FEA</span><span class="skill-chip">DMFA</span><span class="skill-chip">Systems Integration</span>
-            </div>
-        </div>
 
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <span class="current">Robotic Manipulator</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Robotics</span>
+            <span class="tag-pill year">Cornell Mars Rover</span>
+        </div>
+        <h1 class="project-title">Robotic Manipulator</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">CAD</span>
+            <span class="skill-chip">ANSYS FEA</span>
+            <span class="skill-chip">DFMA</span>
+            <span class="skill-chip">Systems Integration</span>
+        </div>
+    </section>
+
+    <div class="container reveal">
         <div class="split-block reveal">
             <div class="txt">
-                <p>In my junior year, I designed the structure of the robotic manipulator for the Cornell Mars Rover project team. I redesigned the locations of the motors, moving one of the motors to the elbow of the manipulator, in order to reduce the moment created on the base of the robotic manipulator. I took the lead in assembling, wiring, and testing the arm. During testing and competition, I controlled our arm with a miniature arm, which the larger arm mimics the movements of during operation. My Final Design Review presentation can be found at: <a href="https://docs.google.com/presentation/d/1L-ska8Kut9bE4d05-VaHuIfrk5CCEFDMjVNFpnK_-dg/edit?usp=sharing" target="_blank" style="color:var(--gold); text-decoration:underline;">FDR Link</a>.</p>
+                <p class="lede">In my junior year, I designed the structure of the robotic manipulator for the Cornell Mars Rover project team. I redesigned the locations of the motors, moving one motor to the elbow to reduce the moment created on the base.</p>
+                <p style="margin-top:18px;">I took the lead in assembling, wiring, and testing the arm. During testing and competition, I controlled the arm with a miniature arm that the larger arm mimics in real time. My Final Design Review can be found at: <a href="https://docs.google.com/presentation/d/1L-ska8Kut9bE4d05-VaHuIfrk5CCEFDMjVNFpnK_-dg/edit?usp=sharing" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">FDR Link</a>.</p>
             </div>
             <div class="frame">
-                <video controls autoplay muted loop><source src="pictures/arm-video-2.mp4"></video>
-                <div class="cap">Video: Demonstration of arm movement, controlled by mini-arm</div>
+                <video controls autoplay muted loop playsinline><source src="pictures/arm-video-2.mp4"></video>
+                <div class="cap">Video &mdash; arm movement controlled by mini-arm</div>
             </div>
         </div>
 
         <div class="split-block reverse reveal">
             <div class="txt">
-                <h2>5kg Cache Testing</h2>
-                <p>I took the lead in assembling and testing the arm to ensure mechanical reliability. This video demonstrates the critical testing phase where the manipulator successfully picks up the 5kg cache, validating the structural integrity of the elbow redesign.</p>
+                <h2>5&nbsp;kg Cache Testing</h2>
+                <p style="margin-top:18px;">I led the assembly and testing of the arm to validate mechanical reliability. This clip captures the critical phase where the manipulator successfully picks up the 5&nbsp;kg cache, confirming the structural integrity of the elbow redesign.</p>
             </div>
             <div class="frame">
-                <video controls><source src="pictures/arm-video-1.mp4"></video>
-                <div class="cap">Video: 5kg cache pickup test</div>
+                <video controls playsinline><source src="pictures/arm-video-1.mp4"></video>
+                <div class="cap">Video &mdash; 5&nbsp;kg cache pickup test</div>
             </div>
         </div>
 
-        <div class="bottom-media-grid reveal">
-            <div class="frame"><img src="pictures/arm-elbow.png"><div class="cap">Elbow area of manipulator</div></div>
-            <div class="frame"><img src="pictures/arm-wrist.png"><div class="cap">Wrist area of manipulator</div></div>
-            <div class="frame"><img src="pictures/arm-fea.png"><div class="cap">FEA of one of the structural joints in the wrist region</div></div>
-            <div class="frame"><img src="pictures/arm-full.png"><div class="cap">Full robotic manipulator assembly</div></div>
+        <div class="bottom-media-grid reveal" style="padding:0; max-width:none;">
+            <div class="frame"><img src="pictures/arm-elbow.png" alt="Elbow"><div class="cap">Elbow area of manipulator</div></div>
+            <div class="frame"><img src="pictures/arm-wrist.png" alt="Wrist"><div class="cap">Wrist area of manipulator</div></div>
+            <div class="frame"><img src="pictures/arm-fea.png" alt="FEA"><div class="cap">FEA of a structural joint in the wrist region</div></div>
+            <div class="frame"><img src="pictures/arm-full.png" alt="Full assembly"><div class="cap">Full robotic manipulator assembly</div></div>
         </div>
     </div>
+
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>

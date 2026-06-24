@@ -2,46 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>End Effector | Ari Rabinovitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="container reveal">
-        <h1>End Effector</h1>
-        <div style="margin: 20px 0 40px;">
-            <div class="skills-wrapper">
-                <span class="skills-literal-label">Skills:</span>
-            <span class="skill-chip">CAD</span><span class="skill-chip">Autodesk Inventor</span><span class="skill-chip">Machining</span>
-            </div>
-        </div>
-        <p style="margin-bottom: 40px; font-size: 1.1rem;">As a part of my work on the Cornell Mars Rover project team, I designed and built an end effector to be mounted onto the rover's arm. This arm is used to pick up rocks of complicated geometry, carry up to 5 kg, and complete several dexterous tasks such as typing on a keyboard, screwing in a screw, moving around a joystick, and flipping switches.</p>
 
-        <div class="bottom-media-grid reveal">
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <span class="current">End Effector</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Mechanical Design</span>
+            <span class="tag-pill year">Cornell Mars Rover</span>
+        </div>
+        <h1 class="project-title">End Effector</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">CAD</span>
+            <span class="skill-chip">Autodesk Inventor</span>
+            <span class="skill-chip">Machining</span>
+        </div>
+        <p class="lede" style="margin-top: 24px;">As part of the Cornell Mars Rover project team, I designed and built an end effector for the rover's arm — able to pick up irregular rocks, carry up to 5&nbsp;kg, and complete dexterous tasks: typing, screwdriving, joystick manipulation, and switch flipping.</p>
+    </section>
+
+    <div class="container reveal">
+        <div class="bottom-media-grid reveal" style="padding:0; max-width:none;">
             <a href="project-effector-p1.html" class="action-card">
-                <img src="pictures/effector-p1.png">
-                <h3>01. First Prototype</h3>
-                <p style="margin-top:10px; font-size: 0.9rem;">4-Linkage First Prototype</p>
+                <div class="img-wrap"><img src="pictures/effector-p1.png" alt="First prototype"></div>
+                <div class="card-meta"><span class="num">01</span><span class="sep"></span><span>Prototype</span></div>
+                <h3>First Prototype</h3>
+                <p class="card-desc">4-linkage system, DC motor, integrated camera and self-actuating screwdriver.</p>
             </a>
             <a href="project-effector-p2.html" class="action-card">
-                <img src="pictures/effector-p2-laser.png">
-                <h3>02. Final Prototype</h3>
-                <p style="margin-top:10px; font-size: 0.9rem;">6-Linkage Final Prototype</p>
+                <div class="img-wrap"><img src="pictures/effector-p2-laser.png" alt="Final prototype"></div>
+                <div class="card-meta"><span class="num">02</span><span class="sep"></span><span>Final design</span></div>
+                <h3>Final Prototype</h3>
+                <p class="card-desc">6-linkage gripper with spring-loaded TPU pads, linear actuator, camera and laser.</p>
             </a>
         </div>
     </div>
+
     <div id="footer-placeholder"></div>
-
-<script>
-    // Load Navbar
-    fetch('navbar.html').then(res=>res.text()).then(data=>{document.getElementById('nav-placeholder').innerHTML=data;});
-
-    // Load Footer
-    fetch('footer.html').then(res=>res.text()).then(data=>{document.getElementById('footer-placeholder').innerHTML=data;});
-
-    // Reveal Logic (Keep your existing code below)
-    function reveal(){var reveals=document.querySelectorAll(".reveal");for(var i=0;i<reveals.length;i++){if(reveals[i].getBoundingClientRect().top<window.innerHeight-100)reveals[i].classList.add("active");}}
-    window.addEventListener("scroll",reveal);window.onload=reveal;
-</script>
+    <script src="main.js"></script>
 </body>
 </html>
