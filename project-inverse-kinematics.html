@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inverse Kinematics | Ari Rabinovitz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="project-hero reveal">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span class="sep">/</span>
+            <a href="index.html#projects">Projects</a><span class="sep">/</span>
+            <span class="current">Inverse Kinematics</span>
+        </div>
+        <div class="project-tag-row">
+            <span class="tag-pill">Robotics</span>
+            <span class="tag-pill year">Cornell Mars Rover</span>
+        </div>
+        <h1 class="project-title">Inverse Kinematics</h1>
+        <div class="skills-wrapper">
+            <span class="skills-literal-label">Skills</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">Robotics Controls</span>
+        </div>
+    </section>
+
+    <div class="container reveal">
+        <div class="split-block reveal">
+            <div class="txt">
+                <p class="lede">As the lead of the arm sub-team my senior year, we designed the arm to utilize a differential wrist instead of two independent motors at the wrist region. This not only reduced the mass of the overall system and improved the torque capabilities in both directions, but also greatly simplifies the operation of the arm, reducing the time required to complete dexterous tasks. In this new system, a new inverse kinematics algorithm was necessary in order to control the arm accurately. I designed the inverse kinematics algorithm to utilize Jacobian matrices because a closed-form solution was not feasible for controlling all 6 degrees of freedom of the arm. This algorithm was tested both in simulation and in actual operation, as can both be seen to the right.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="frame">
+                    <video controls autoplay muted loop playsinline><source src="pictures/ik-sim.mp4"></video>
+                    <div class="cap">Video: algorithm tested in simulation</div>
+                </div>
+                <div class="frame">
+                    <video controls playsinline><source src="pictures/ik-real.mp4"></video>
+                    <div class="cap">Video: algorithm running on the physical arm</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="main.js"></script>
+</body>
+</html>

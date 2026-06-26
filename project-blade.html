@@ -28,29 +28,28 @@
     </section>
 
     <div class="container reveal">
-        <div class="frame reveal" style="max-width: 1000px; margin: 0 auto 60px;">
+        <div class="frame reveal" style="max-width: 750px; margin: 0 auto 60px;">
             <img src="pictures/blade-cad.png" alt="Blade CAD">
             <div class="cap">Final blade geometry in Fusion 360</div>
         </div>
 
         <div class="split-block reveal">
             <div class="txt">
-                <p class="lede">For MAE 4272 (Heat Transfer and Fluids Laboratory), we were tasked with designing an airfoil to operate at a fixed rotation rate in wind conditions described by a Weibull distribution — a constrained optimization problem.</p>
-                <p style="margin-top:18px;">I chose to optimize for power at a target rotation rate of 1000&nbsp;RPM. Using our Weibull distribution, I calculated the optimal design wind speed of 5.05&nbsp;m/s. The peak is visible in the figure to the right.</p>
+                <p class="lede">For MAE 4272 (Heat Transfer and Fluids Laboratory), we were asked to design an airfoil. The goal was to design an airfoil to operate at a fixed rotation rate, while operating in wind conditions told to us according to a Weibull distribution. We were asked to design this to learn how to optimize a design. I chose to optimize our design for power at our chosen rotation rate of 1000 RPM. Given our Weibull distribution, I calculated which wind speed to design for, which was determined to be 5.05 m/s. The peak is visible in the figure to the right.</p>
             </div>
             <div class="frame"><img src="pictures/blade-weibull.png" alt="Weibull plot"><div class="cap">Weibull distribution and expected power generation</div></div>
         </div>
 
         <div class="split-block reverse reveal">
             <div class="txt">
-                <p>To optimize power, I maximized the Cl/Cd ratio — designing for a constant angle of attack of about 9.75&deg;. The blade's pitch was twisted along its span to hold that angle of attack, and the chord was tapered to maximize power within constraints. The stress prediction at the highest probable wind speed is shown to the right.</p>
+                <p>To optimize power, I designed to optimize our Cl/Cd ratio, which meant that I designed for a constant angle of attack of about 9.75 degrees. I twisted the pitch angle of the airblade to maintain this angle of attack. Then, I tapered our chord length to both maximize power within our limiting constraints. Here is an image of the expected stress on the airblade at the highest probable wind speed:</p>
             </div>
             <div class="frame"><img src="pictures/blade-stress.png" alt="Stress"><div class="cap">Expected stress on airblade</div></div>
         </div>
 
         <div class="split-block reveal">
             <div class="txt">
-                <p>We tested the airfoils in a wind tunnel, collecting power curves from 3.4&nbsp;m/s to 7.1&nbsp;m/s — our upper limit of likely wind speeds. Results showed that the airfoils did peak near 1000&nbsp;RPM as designed, but generated power was an order of magnitude below prediction. Probability-scaled power curves are below.</p>
+                <p>We tested the airfoils in a wind tunnel, obtaining power curves for the airfoils from 3.4 m/s to 7.1 m/s, our upper limit of likely wind speeds. Our results showed that our airfoils did generate the most power near 1000 RPM; however, the power generation was an order of magnitude less than expected. The power curves scaled by probability can be seen here:</p>
             </div>
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="frame"><img src="pictures/blade-power.png" alt="Power curves"><div class="cap">Experimental power curves</div></div>
