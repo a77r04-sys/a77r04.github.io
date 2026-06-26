@@ -210,6 +210,23 @@ nav > ul > li > a:hover::after { width: 100%; }
 }
 .dropdown-content a:hover::after { opacity: 1; transform: translateX(0); }
 
+.dropdown-content .has-sub { position: relative; }
+.dropdown-content .has-sub > .sub-content {
+    opacity: 0; visibility: hidden; transform: translateX(-8px);
+    position: absolute; top: -12px; left: 100%;
+    width: max-content; padding: 12px;
+    background: rgba(36, 58, 63, 0.92);
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+    transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out), visibility 0.3s;
+}
+.dropdown-content .has-sub:hover > .sub-content,
+.dropdown-content .has-sub:focus-within > .sub-content {
+    opacity: 1; visibility: visible; transform: translateX(0);
+}
+
 /* ============================================================
    HERO
    ============================================================ */
