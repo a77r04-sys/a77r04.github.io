@@ -1,6 +1,38 @@
 (function () {
     'use strict';
 
+    // ---------- Single source of truth for project names ----------
+    // To rename a project everywhere on the site, edit the value here.
+    const PROJECTS = {
+        'inverse-kinematics': 'Inverse Kinematics',
+        'arm': 'Arm Structure',
+        'effector': 'End Effector',
+        'effector-p1': 'First Prototype',
+        'effector-p2': 'Final Prototype',
+        'electrospray': 'Electrospray Research',
+        'boom': 'Boom Deployment Mechanism',
+        'soup': 'Automatic Soup Stirrer',
+        'blade': 'Airfoil Blade',
+    };
+
+    function syncProjectNames() {
+        document.querySelectorAll('[data-project-id]').forEach((el) => {
+            const name = PROJECTS[el.dataset.projectId];
+            if (!name) return;
+            if (el.tagName === 'BODY') {
+                const current = el.querySelector('.breadcrumb .current');
+                if (current) current.textContent = name;
+                const title = el.querySelector('.project-title');
+                if (title) title.textContent = name;
+                document.title = name + ' | Ari Rabinovitz';
+            } else {
+                const h3 = el.querySelector('h3');
+                if (h3) h3.textContent = name;
+                else el.textContent = name;
+            }
+        });
+    }
+
     // ---------- Background + progress: inject once ----------
     function injectAtmosphere() {
         const layers = ['aurora', 'grid-bg', 'grain', 'scroll-progress'];
@@ -110,7 +142,8 @@
         bindReveal();
         bindCardLight();
         bindMarquee();
-        loadPartials();
+        syncProjectNames();
+        loadPartials().then(syncProjectNames);
     }
 
     if (document.readyState === 'loading') {
