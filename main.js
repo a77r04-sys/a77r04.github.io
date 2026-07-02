@@ -109,6 +109,84 @@
         });
     }
 
+    // ---------- Lightbox: click a framed image to view it uncropped ----------
+    function bindLightbox() {
+        const box = document.createElement('div');
+        box.id = 'lightbox';
+        const full = document.createElement('img');
+        box.appendChild(full);
+        document.body.appendChild(box);
+        document.addEventListener('click', (e) => {
+            const thumb = e.target.closest('.frame img');
+            if (thumb && !box.classList.contains('show')) {
+                full.src = thumb.src;
+                full.alt = thumb.alt || '';
+                box.classList.add('show');
+            } else if (box.classList.contains('show')) {
+                box.classList.remove('show');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') box.classList.remove('show');
+        });
+    }
+
+    // ---------- Prev/next navigation at the bottom of project pages ----------
+    // Top-level pages cycle through main projects only; the End Effector
+    // prototype sub-pages get a local flow so vague sub-page titles
+    // ("Final Prototype") never appear on main-project pages.
+    const MAIN_ORDER = [
+        'inverse-kinematics', 'arm', 'effector',
+        'electrospray', 'boom', 'soup', 'blade',
+    ];
+    const SUB_ORDER = ['effector', 'effector-p1', 'effector-p2', 'electrospray'];
+    function injectProjectNav() {
+        const id = document.body.dataset.projectId;
+        const footHost = document.getElementById('footer-placeholder');
+        if (!id || !footHost || document.querySelector('.project-nav')) return;
+        const order = MAIN_ORDER.includes(id) ? MAIN_ORDER : SUB_ORDER;
+        const i = order.indexOf(id);
+        if (i === -1) return;
+        const prev = order[(i - 1 + order.length) % order.length];
+        const next = order[(i + 1) % order.length];
+        const nav = document.createElement('nav');
+        nav.className = 'project-nav';
+        nav.innerHTML =
+            '<a class="pn-prev" href="project-' + prev + '.html">' +
+            '<span class="pn-label">← Previous</span>' +
+            '<span class="pn-name"></span></a>' +
+            '<a class="pn-next" href="project-' + next + '.html">' +
+            '<span class="pn-label">Next →</span>' +
+            '<span class="pn-name"></span></a>';
+        nav.querySelector('.pn-prev .pn-name').textContent = PROJECTS[prev];
+        nav.querySelector('.pn-next .pn-name').textContent = PROJECTS[next];
+        document.body.insertBefore(nav, footHost);
+    }
+
+    // ---------- Touch devices: first tap opens a dropdown, second tap follows the link ----------
+    function bindTouchDropdowns() {
+        if (!window.matchMedia('(hover: none)').matches) return;
+        document.addEventListener('click', (e) => {
+            const trigger = e.target.closest('.dropdown > a, .has-sub > a');
+            if (trigger) {
+                const parent = trigger.parentElement;
+                if (!parent.classList.contains('open')) {
+                    e.preventDefault();
+                    document
+                        .querySelectorAll('.dropdown.open, .has-sub.open')
+                        .forEach((el) => {
+                            if (!el.contains(parent)) el.classList.remove('open');
+                        });
+                    parent.classList.add('open');
+                }
+                return;
+            }
+            document
+                .querySelectorAll('.dropdown.open, .has-sub.open')
+                .forEach((el) => el.classList.remove('open'));
+        });
+    }
+
     // ---------- Load partials (navbar + footer) ----------
     function loadPartials() {
         const navHost = document.getElementById('nav-placeholder');
@@ -141,6 +219,9 @@
         bindScroll();
         bindReveal();
         bindCardLight();
+        bindTouchDropdowns();
+        bindLightbox();
+        injectProjectNav();
         bindMarquee();
         syncProjectNames();
         loadPartials().then(syncProjectNames);

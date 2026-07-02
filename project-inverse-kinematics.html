@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inverse Kinematics | Ari Rabinovitz</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-project-id="inverse-kinematics">
@@ -34,11 +35,11 @@
             </div>
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="frame">
-                    <video controls autoplay muted loop playsinline><source src="pictures/ik-sim.mp4"></video>
+                    <video controls autoplay muted loop playsinline poster="pictures/posters/ik-sim.jpg"><source src="pictures/ik-sim.mp4"></video>
                     <div class="cap">Video: algorithm tested in simulation</div>
                 </div>
                 <div class="frame">
-                    <video controls playsinline><source src="pictures/ik-real.mp4"></video>
+                    <video controls playsinline preload="none" poster="pictures/posters/ik-real.jpg"><source src="pictures/ik-real.mp4"></video>
                     <div class="cap">Video: algorithm running on the physical arm</div>
                 </div>
             </div>
